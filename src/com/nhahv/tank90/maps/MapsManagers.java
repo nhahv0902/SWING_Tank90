@@ -46,10 +46,10 @@ public class MapsManagers {
         return mListMaps;
     }
 
-    public void drawMaps(Graphics2D graphics2D, int width) {
+    public void drawMaps(Graphics2D graphics2D) {
 
         for (ItemsMaps itemsMaps : mListMaps) {
-            itemsMaps.draw(graphics2D, width);
+            itemsMaps.draw(graphics2D);
         }
     }
 }

@@ -1,12 +1,11 @@
 package com.nhahv.tank90.gui;
 
 import com.nhahv.tank90.images.ImageIcons;
+import com.nhahv.tank90.maps.Bird;
 import com.nhahv.tank90.maps.ImagesMenu;
 import com.nhahv.tank90.maps.MapsManagers;
-import com.nhahv.tank90.maps.Bird;
 import com.nhahv.tank90.models.Models;
 
-import javax.swing.*;
 import java.awt.*;
 
 /**
@@ -14,10 +13,7 @@ import java.awt.*;
  */
 public class PlayGame extends BaseContainer {
 
-    private int widthLbGuide;
-    private int widthMaps;
-    private int startGuide2;
-    private int mLevel_1 = 8;
+    private int mLevel_1 = 1;
     private MapsManagers mMapsManagers;
     private Bird mBird;
 
@@ -32,12 +28,6 @@ public class PlayGame extends BaseContainer {
 
     @Override
     protected void initComponents() {
-
-        ImageIcon image = new ImageIcons(Models.ICONS_GUIDE_LEFT).getImageIcon();
-        widthLbGuide = image.getIconWidth();
-
-        widthMaps = widthLbGuide + Models.PADDING_LEFT + 676;
-        startGuide2 = widthMaps + Models.PADDING_LEFT;
     }
 
     @Override
@@ -59,11 +49,11 @@ public class PlayGame extends BaseContainer {
 
         drawMaps(graphics2D);
         graphics2D.setColor(Color.WHITE);
-        graphics2D.drawRect(widthLbGuide, 0, Models.PADDING_LEFT, Models.HEIGHT);
-        graphics2D.fillRect(widthLbGuide, 0, Models.PADDING_LEFT, Models.HEIGHT);
+        graphics2D.drawRect(Models.WIDTH_GUIDE, 0, Models.PADDING_LEFT, Models.HEIGHT);
+        graphics2D.fillRect(Models.WIDTH_GUIDE, 0, Models.PADDING_LEFT, Models.HEIGHT);
 
-        graphics2D.drawRect(startGuide2 - Models.PADDING_LEFT, 0, Models.PADDING_LEFT, Models.HEIGHT);
-        graphics2D.fillRect(startGuide2 - Models.PADDING_LEFT, 0, Models.PADDING_LEFT, Models.HEIGHT);
+        graphics2D.drawRect(Models.START_GUIDE_RIGHT - Models.PADDING_LEFT, 0, Models.PADDING_LEFT, Models.HEIGHT);
+        graphics2D.fillRect(Models.START_GUIDE_RIGHT - Models.PADDING_LEFT, 0, Models.PADDING_LEFT, Models.HEIGHT);
 
         drawBird(graphics2D);
 
@@ -75,7 +65,7 @@ public class PlayGame extends BaseContainer {
 
     private void drawMaps(Graphics2D graphics2D) {
         mMapsManagers = new MapsManagers(mLevel_1);
-        mMapsManagers.drawMaps(graphics2D, widthLbGuide + Models.PADDING_LEFT);
+        mMapsManagers.drawMaps(graphics2D);
     }
 
     private void drawBird(Graphics2D graphics2D) {

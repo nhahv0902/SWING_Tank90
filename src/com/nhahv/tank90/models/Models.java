@@ -114,6 +114,12 @@ public class Models {
     public static final int TYPE_ITEMS_5 = 4;
     public static final int TYPE_ITEMS_6 = 5;
 
+    public static final int MAPS_CROSS = 0;
+    public static final int MAPS_NO_CROSS = 1;
+    public static final int MAPS_BREAK = 2;
+//    public static final int MAPS_CROSS = 0;
+
+
     public static final int TYPE_HELP_1 = 0;
     public static final int TYPE_HELP_2 = 1;
     public static final int TYPE_HELP_3 = 2;
@@ -123,15 +129,25 @@ public class Models {
     public static final int TYPE_HELP_7 = 6;
 
 
-    public static final int PADDING_LEFT = 20;
     public static final int SIZE_BULLET = 16;
     public static final int NUMBER_BULLET = 4;
     public static final int TYPE_BULLET_NORMAL = 0;
     public static final int TYPE_BULLET_BIG = 1;
 
+    public static final int PADDING_LEFT = 20;
     public static final int WIDTH_GUIDE = 250;
+    public static final int WIDTH_MAPS = 676;
+    public static final int START_MAPS = WIDTH_GUIDE + PADDING_LEFT;
+
+    public static final int START_GUIDE_RIGHT = WIDTH_GUIDE + WIDTH_MAPS + PADDING_LEFT * 2;
+
     public static final int START_PLAYER_ONE = WIDTH_GUIDE + 20 + 8 * SIZE_ITEMS_MAPS;
     public static final int START_PLAYER_TWO = WIDTH_GUIDE + 20 + 16 * SIZE_ITEMS_MAPS;
-    public static final int START_PLAYER_HEIGHT = Models.HEIGHT - Models.SIZE_BOOS * 2 + Models.SIZE_ITEMS_MAPS;
+    public static final int START_PLAYER_HEIGHT = HEIGHT - SIZE_BOOS * 2 + SIZE_ITEMS_MAPS;
+
+    public static final int SPEED_DEFAULT = 1;
+    public static final int SPEED_MAX = 2;
+    public static final int TIME_SPEED_MAX = 15;
+
 
 }

@@ -25,28 +25,28 @@ public class ItemsHelp extends Items {
 
     @Override
     protected Image getImages() {
-        Image image = getmListImages().get(Models.TYPE_HELP_1);
+        Image image = getListImages().get(Models.TYPE_HELP_1);
         switch (getType()) {
             case Models.TYPE_HELP_1:
-                image = getmListImages().get(Models.TYPE_HELP_1);
+                image = getListImages().get(Models.TYPE_HELP_1);
                 break;
             case Models.TYPE_HELP_2:
-                image = getmListImages().get(Models.TYPE_HELP_2);
+                image = getListImages().get(Models.TYPE_HELP_2);
                 break;
             case Models.TYPE_HELP_3:
-                image = getmListImages().get(Models.TYPE_HELP_3);
+                image = getListImages().get(Models.TYPE_HELP_3);
                 break;
             case Models.TYPE_HELP_4:
-                image = getmListImages().get(Models.TYPE_HELP_4);
+                image = getListImages().get(Models.TYPE_HELP_4);
                 break;
             case Models.TYPE_HELP_5:
-                image = getmListImages().get(Models.TYPE_HELP_5);
+                image = getListImages().get(Models.TYPE_HELP_5);
                 break;
             case Models.TYPE_HELP_6:
-                image = getmListImages().get(Models.TYPE_HELP_6);
+                image = getListImages().get(Models.TYPE_HELP_6);
                 break;
             case Models.TYPE_HELP_7:
-                image = getmListImages().get(Models.TYPE_HELP_7);
+                image = getListImages().get(Models.TYPE_HELP_7);
                 break;
         }
         return image;

@@ -16,13 +16,16 @@ public class TankPlayer extends Tank {
     private ArrayList<Image> mListTankOneBig;
     private ArrayList<Image> mListTankTwoBig;
 
-    public TankPlayer(int x, int y, int width, int height, int type, int orient, int timeSpeed) {
-        super(x, y, width, height, type, orient, timeSpeed);
+    //    private int speedMode;
+    private int life;
+
+    public TankPlayer(int x, int y, int width, int height, int type, int orient, int speedMode) {
+        super(x, y, width, height, type, orient, speedMode);
+
         setListTankOne();
         setListTankTwo();
         type = Models.TYPE_PLAYER_1;
-
-
+        setSpeedMode(Models.SPEED_DEFAULT);
         setY(Models.START_PLAYER_HEIGHT);
         if (type == Models.TYPE_PLAYER_1) {
             setX(Models.START_PLAYER_ONE);
@@ -129,5 +132,23 @@ public class TankPlayer extends Tank {
         }
 
         graphics2D.drawImage(image, getX(), getY(), getWidth(), getHeight(), null);
+    }
+
+
+    public void move() {
+        switch (getOrient()) {
+            case Models.UP:
+                setY(getY() - getSpeedMode());
+                break;
+            case Models.DOWN:
+                setY(getY() + getSpeedMode());
+                break;
+            case Models.LEFT:
+                setX(getX() - getSpeedMode());
+                break;
+            case Models.RIGHT:
+                setX(getX() + getSpeedMode());
+                break;
+        }
     }
 }

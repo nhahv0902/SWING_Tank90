@@ -7,11 +7,11 @@ public class Tank extends CommonSize {
 
     private int type;
     private int orient;
-    private int timeSpeed;
+    private int speedMode;
 
-    public Tank(int x, int y, int width, int height, int type, int orient, int timeSpeed) {
+    public Tank(int x, int y, int width, int height, int type, int orient, int speedMode) {
         super(x, y, width, height);
-        this.timeSpeed = timeSpeed;
+        this.speedMode = speedMode;
         this.type = type;
         this.orient = orient;
     }
@@ -31,5 +31,13 @@ public class Tank extends CommonSize {
 
     public void setOrient(int orient) {
         this.orient = orient;
+    }
+
+    public int getSpeedMode() {
+        return speedMode;
+    }
+
+    public void setSpeedMode(int speedMode) {
+        this.speedMode = speedMode;
     }
 }

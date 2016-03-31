@@ -18,7 +18,7 @@ public abstract class Items extends CommonSize {
         this.type = type;
     }
 
-    public abstract void draw(Graphics2D graphics2D, int width);
+    public abstract void draw(Graphics2D graphics2D);
 
 
     protected abstract Image getImages();
@@ -31,7 +31,7 @@ public abstract class Items extends CommonSize {
         this.type = type;
     }
 
-    public ArrayList<Image> getmListImages() {
+    public ArrayList<Image> getListImages() {
         return mListImages;
     }
 
