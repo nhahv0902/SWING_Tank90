@@ -17,7 +17,7 @@ public class ItemsHelp extends Items {
     }
 
     @Override
-    public void draw(Graphics2D graphics2D, int width) {
+    public void draw(Graphics2D graphics2D ) {
         Image image = getImages();
         graphics2D.drawImage(image, getX(), getY(), getWidth(), getHeight(), null);
     }

@@ -85,6 +85,9 @@ public class Models {
     public static final String PLAY_ONE_DOWN_BIG = "/IMAGES/player_one_down_big.png";
     public static final String PLAY_ONE_LEFT_BIG = "/IMAGES/player_one_left_big.png";
     public static final String PLAY_ONE_RIGHT_BIG = "/IMAGES/player_one_right_big.png";
+    public static final String PLAY_ONE_ONE = "/IMAGES/player_one.png";
+
+    public static final int PADDING_TANK = 6;
 
 
     public static int TYPE_PLAYER_1 = 0;
@@ -136,18 +139,28 @@ public class Models {
 
     public static final int PADDING_LEFT = 20;
     public static final int WIDTH_GUIDE = 250;
-    public static final int WIDTH_MAPS = 676;
+    public static final int SIZE_MAPS = 676;
     public static final int START_MAPS = WIDTH_GUIDE + PADDING_LEFT;
 
-    public static final int START_GUIDE_RIGHT = WIDTH_GUIDE + WIDTH_MAPS + PADDING_LEFT * 2;
+    public static final int START_GUIDE_RIGHT = WIDTH_GUIDE + SIZE_MAPS + PADDING_LEFT * 2;
 
-    public static final int START_PLAYER_ONE = WIDTH_GUIDE + 20 + 8 * SIZE_ITEMS_MAPS;
-    public static final int START_PLAYER_TWO = WIDTH_GUIDE + 20 + 16 * SIZE_ITEMS_MAPS;
+    //    public static final int START_PLAYER_ONE = WIDTH_GUIDE + 20 + 8 * SIZE_ITEMS_MAPS;
+    public static final int START_PLAYER_ONE = 8 * SIZE_ITEMS_MAPS;
+    public static final int START_PLAYER_TWO = 16 * SIZE_ITEMS_MAPS;
     public static final int START_PLAYER_HEIGHT = HEIGHT - SIZE_BOOS * 2 + SIZE_ITEMS_MAPS;
 
     public static final int SPEED_DEFAULT = 1;
     public static final int SPEED_MAX = 2;
     public static final int TIME_SPEED_MAX = 15;
+
+    public static final int TIME_FIRE_NORMAL = 2;
+    public static final int TIME_FIRE_MAX = 1;
+    public static final int SPEED_BULLET_NORMAL = 1;
+    public static final int SPEED_BULLET_MAX = 2;
+
+
+    public static final int TIME_OUT = 400;
+    public static final int TIME_SLEEP = 12;
 
 
 }

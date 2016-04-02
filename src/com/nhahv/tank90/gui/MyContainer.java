@@ -14,7 +14,8 @@ public class MyContainer extends BaseContainer {
     private MenuGame mMenuGame;
     private CardLayout mCardLayout;
 
-    private PlayGame mPlayGame;
+    //    private PlayGame mPlayGame;
+    private ContainerPlayGame mPlayGame;
     private ExitGUI mExitGUI;
     private Interfaces mInterface;
 
@@ -25,7 +26,7 @@ public class MyContainer extends BaseContainer {
         mInterface = new Interfaces() {
             public void showPlayGame() {
                 mCardLayout.show(MyContainer.this, Models.PLAY_GAME);
-                mPlayGame.requestFocus();
+                mPlayGame.getPlayGame().requestFocus();
             }
 
             public void exitGUI() {
@@ -35,6 +36,7 @@ public class MyContainer extends BaseContainer {
         mCardLayout = new CardLayout();
         mCardLayout.invalidateLayout(this);
         this.setLayout(mCardLayout);
+
     }
 
     @Override
@@ -42,7 +44,8 @@ public class MyContainer extends BaseContainer {
 
         mMenuGame = new MenuGame();
         mMenuGame.setExitGUI(mInterface);
-        mPlayGame = new PlayGame();
+//        mPlayGame = new PlayGame();
+        mPlayGame = new ContainerPlayGame();
     }
 
     @Override
@@ -63,6 +66,7 @@ public class MyContainer extends BaseContainer {
             mMenuGame.requestFocus();
         }
     }
+
 
     public void setExitGUI(ExitGUI interfaces) {
         this.mExitGUI = interfaces;

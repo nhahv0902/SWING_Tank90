@@ -30,6 +30,7 @@ public class ImagesManager {
         mListItemsHelp = getImage(Models.ITEMS_HELP, Models.SIZE_ITEMS_MAPS, Models.SIZE_ITEMS_MAPS, Models.NUMBER_ITEMS_HELP);
 
 
+        mListPlayer_1 = getImage(Models.PLAY_ONE_ONE, Models.SIZE_BOOS, Models.SIZE_BOOS, Models.NUMBER_BOOS);
         mListBoss_1 = getImage(Models.BOSS_1, Models.SIZE_BOOS, Models.SIZE_BOOS, Models.NUMBER_BOOS);
         mListBoss_2 = getImage(Models.BOSS_2, Models.SIZE_BOOS, Models.SIZE_BOOS, Models.NUMBER_BOOS);
         mListBoss_3 = getImage(Models.BOSS_3, Models.SIZE_BOOS, Models.SIZE_BOOS, Models.NUMBER_BOOS);
@@ -89,5 +90,9 @@ public class ImagesManager {
 
     public static ArrayList<Image> getListItemsHelp() {
         return mListItemsHelp;
+    }
+
+    public static ArrayList<Image> getListPlayer_1(){
+        return mListPlayer_1;
     }
 }

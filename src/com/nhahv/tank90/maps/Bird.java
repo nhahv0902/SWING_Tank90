@@ -20,8 +20,10 @@ public class Bird {
     public Bird() {
 
         setImages();
-        x = (Models.WIDTH - Models.SIZE_BOOS) / 2;
-        y = Models.HEIGHT - Models.SIZE_BOOS * 2 + Models.SIZE_ITEMS_MAPS;
+//        x = (Models.WIDTH - Models.SIZE_BOOS) / 2;
+        x = (Models.SIZE_MAPS - Models.SIZE_BOOS) / 2;
+//        y = Models.HEIGHT - Models.SIZE_BOOS * 2 + Models.SIZE_ITEMS_MAPS;
+        y = Models.SIZE_MAPS - Models.SIZE_BOOS;
         size = Models.SIZE_BOOS;
     }
 
@@ -36,5 +38,9 @@ public class Bird {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    public Rectangle getRectangle() {
+        return new Rectangle(x, y, size, size);
     }
 }

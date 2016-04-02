@@ -1,6 +1,10 @@
 package com.nhahv.tank90.object;
 
 import com.nhahv.tank90.images.ImageIcons;
+import com.nhahv.tank90.images.ImagesManager;
+import com.nhahv.tank90.maps.Bird;
+import com.nhahv.tank90.maps.ItemsMaps;
+import com.nhahv.tank90.maps.MapsManagers;
 import com.nhahv.tank90.models.Models;
 
 import java.awt.*;
@@ -22,11 +26,16 @@ public class TankPlayer extends Tank {
     public TankPlayer(int x, int y, int width, int height, int type, int orient, int speedMode) {
         super(x, y, width, height, type, orient, speedMode);
 
-        setListTankOne();
-        setListTankTwo();
+        setWidth(Models.SIZE_BOOS);
+        setHeight(Models.SIZE_BOOS);
         type = Models.TYPE_PLAYER_1;
         setSpeedMode(Models.SPEED_DEFAULT);
         setY(Models.START_PLAYER_HEIGHT);
+
+
+        setListTankOne();
+        setListTankTwo();
+
         if (type == Models.TYPE_PLAYER_1) {
             setX(Models.START_PLAYER_ONE);
         } else {
@@ -36,18 +45,20 @@ public class TankPlayer extends Tank {
 
 
     private void setListTankOne() {
+//        mListTankOne = new ArrayList<>();
+//        Image image = new ImageIcons(Models.PLAY_ONE_UP).getImage();
+//
+//        mListTankOne.add(image);
+//        image = new ImageIcons(Models.PLAY_ONE_DOWN).getImage();
+//        mListTankOne.add(image);
+//
+//        image = new ImageIcons(Models.PLAY_ONE_LEFT).getImage();
+//        mListTankOne.add(image);
+//
+//        image = new ImageIcons(Models.PLAY_ONE_RIGHT).getImage();
+//        mListTankOne.add(image);
         mListTankOne = new ArrayList<>();
-        Image image = new ImageIcons(Models.PLAY_ONE_UP).getImage();
-
-        mListTankOne.add(image);
-        image = new ImageIcons(Models.PLAY_ONE_DOWN).getImage();
-        mListTankOne.add(image);
-
-        image = new ImageIcons(Models.PLAY_ONE_LEFT).getImage();
-        mListTankOne.add(image);
-
-        image = new ImageIcons(Models.PLAY_ONE_RIGHT).getImage();
-        mListTankOne.add(image);
+        mListTankOne = ImagesManager.getListPlayer_1();
     }
 
 
@@ -98,7 +109,8 @@ public class TankPlayer extends Tank {
 
     public void draw(Graphics2D graphics2D) {
 
-        Image image = mListTankOne.get(0);
+        setListTankOne();
+        Image image = mListTankOne.get(Models.UP);
         if (getType() == Models.TYPE_PLAYER_1) {
             switch (getOrient()) {
                 case Models.UP:
@@ -132,23 +144,69 @@ public class TankPlayer extends Tank {
         }
 
         graphics2D.drawImage(image, getX(), getY(), getWidth(), getHeight(), null);
+        for (Bullet bullet : getListBullets()) {
+            bullet.draw(graphics2D);
+        }
     }
 
 
-    public void move() {
+    public void move(MapsManagers mapsManagers, Bird bird) {
+
         switch (getOrient()) {
             case Models.UP:
-                setY(getY() - getSpeedMode());
+                if (getY() > 0) {
+                    setY(getY() - getSpeedMode());
+                    if (inIntersect(mapsManagers, bird)) {
+                        setY(getY() + getSpeedMode());
+                    }
+                }
                 break;
             case Models.DOWN:
-                setY(getY() + getSpeedMode());
+                if (getY() < Models.SIZE_MAPS - Models.SIZE_BOOS) {
+                    setY(getY() + getSpeedMode());
+                    if (inIntersect(mapsManagers, bird)) {
+                        setY(getY() - getSpeedMode());
+                    }
+                }
                 break;
             case Models.LEFT:
-                setX(getX() - getSpeedMode());
+                if (getX() > 0) {
+                    setX(getX() - getSpeedMode());
+                    if (inIntersect(mapsManagers, bird)) {
+                        setX(getX() + getSpeedMode());
+                    }
+                }
                 break;
             case Models.RIGHT:
-                setX(getX() + getSpeedMode());
+                if (getX() < Models.SIZE_MAPS - Models.SIZE_BOOS) {
+                    setX(getX() + getSpeedMode());
+                    if (inIntersect(mapsManagers, bird)) {
+                        setX(getX() - getSpeedMode());
+                    }
+                }
                 break;
         }
+    }
+
+    private boolean inIntersect(MapsManagers mapsManagers, Bird bird) {
+
+        Rectangle rectangle;
+        for (ItemsMaps itemsMaps : mapsManagers.getListMaps()) {
+
+            rectangle = itemsMaps.getRectangle().intersection(getRectangle());
+//            if (rectangle.getWidth() >= 2 || rectangle.getHeight() >= 2
+            if (itemsMaps.getRectangle().intersects(getRectangle())
+                    && itemsMaps.getPropertyTankCross() != Models.MAPS_CROSS) {
+                return true;
+            }
+        }
+
+
+        if (bird.getRectangle().intersects(this.getRectangle())) {
+            return true;
+        }
+
+
+        return false;
     }
 }

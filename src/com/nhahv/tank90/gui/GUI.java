@@ -62,7 +62,6 @@ public class GUI extends JFrame {
 
         new ImagesManager();
         new Models();
-
     }
 
     private void stopGUI() {

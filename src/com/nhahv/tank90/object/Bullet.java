@@ -14,13 +14,13 @@ public class Bullet extends CommonSize {
 
     private ArrayList<Image> mListNormal;
     private ArrayList<Image> mListBig;
-    private int timeSpeed;
+    private int speedBullet;
     private int orient;
     private int type;
 
-    public Bullet(int x, int y, int width, int height, int orient, int timeSpeed, int type) {
+    public Bullet(int x, int y, int width, int height, int orient, int type) {
         super(x, y, width, height);
-        this.timeSpeed = timeSpeed;
+        this.speedBullet = Models.SPEED_BULLET_NORMAL;
         this.orient = orient;
         this.type = type;
         setImage();
@@ -76,6 +76,27 @@ public class Bullet extends CommonSize {
             }
         }
         graphics2D.drawImage(image, getX(), getY(), getWidth(), getHeight(), null);
+    }
+
+    public void setSpeedBullet(int x) {
+        this.speedBullet = x;
+    }
+
+    public void move() {
+        switch (orient) {
+            case Models.UP:
+                setY(getY() - speedBullet);
+                break;
+            case Models.DOWN:
+                setY(getY() + speedBullet);
+                break;
+            case Models.LEFT:
+                setX(getX() - speedBullet);
+                break;
+            case Models.RIGHT:
+                setX(getX() + speedBullet);
+                break;
+        }
     }
 
 }

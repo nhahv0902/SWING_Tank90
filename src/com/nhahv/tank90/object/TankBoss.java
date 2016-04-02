@@ -5,6 +5,7 @@ import com.nhahv.tank90.models.Models;
 
 import java.awt.*;
 import java.util.ArrayList;
+import java.util.Random;
 
 /**
  * Created by Nhahv on 3/30/2016.
@@ -20,10 +21,27 @@ public class TankBoss extends Tank {
 
     private int hpTank;
 
-
     public TankBoss(int x, int y, int width, int height, int type, int orient, int timeSpeed) {
         super(x, y, width, height, type, orient, timeSpeed);
 
+        setAllListImage();
+
+        setWidth(Models.SIZE_BOOS);
+        setHeight(Models.SIZE_BOOS);
+
+
+        int xRandom = new Random().nextInt(3);
+        if (xRandom == 0) {
+            setX(Models.WIDTH_GUIDE + Models.PADDING_LEFT);
+        } else if (xRandom == 1) {
+            setX(Models.WIDTH_GUIDE + Models.PADDING_LEFT + 13 * Models.SIZE_ITEMS_MAPS);
+        } else if (xRandom == 2) {
+            setX(Models.WIDTH_GUIDE + Models.PADDING_LEFT + 24 * Models.SIZE_ITEMS_MAPS);
+
+        }
+    }
+
+    private void setAllListImage() {
 
         mListImageType1 = ImagesManager.getListBoss_1();
         mListImageType2 = ImagesManager.getListBoss_2();
@@ -31,11 +49,6 @@ public class TankBoss extends Tank {
         mListImageType4 = ImagesManager.getListBoss_4();
         mListImageType5 = ImagesManager.getListBoss_5();
         mListImageType6 = ImagesManager.getListBoss_6();
-//        setImagesBossType1();
-//        setImagesBossType2();
-//        setImagesBossType3();
-//        setImagesBossType4();
-//        setImagesBossType5();
     }
 
     public void draw(Graphics2D graphics2D) {
@@ -45,99 +58,101 @@ public class TankBoss extends Tank {
     }
 
     private Image getImages() {
-        Image image = mListImageType1.get(Models.TYPE_BOSS_1);
+        setAllListImage();
+        Image image = mListImageType1.get(Models.UP);
 
         if (getType() == Models.TYPE_BOSS_1) {
             switch (getOrient()) {
                 case Models.UP:
-                    image = mListImageType1.get(Models.TYPE_BOSS_1);
+                    image = mListImageType1.get(Models.UP);
                     break;
                 case Models.DOWN:
-                    image = mListImageType1.get(Models.TYPE_BOSS_2);
+                    image = mListImageType1.get(Models.DOWN);
                     break;
                 case Models.LEFT:
-                    image = mListImageType1.get(Models.TYPE_BOSS_3);
+                    image = mListImageType1.get(Models.LEFT);
                     break;
                 case Models.RIGHT:
-                    image = mListImageType1.get(Models.TYPE_BOSS_4);
+                    image = mListImageType1.get(Models.RIGHT);
                     break;
             }
         } else if (getType() == Models.TYPE_BOSS_2) {
             switch (getOrient()) {
                 case Models.UP:
-                    image = mListImageType2.get(Models.TYPE_BOSS_1);
+                    image = mListImageType2.get(Models.UP);
                     break;
                 case Models.DOWN:
-                    image = mListImageType2.get(Models.TYPE_BOSS_2);
+                    image = mListImageType2.get(Models.DOWN);
                     break;
                 case Models.LEFT:
-                    image = mListImageType2.get(Models.TYPE_BOSS_3);
+                    image = mListImageType2.get(Models.LEFT);
                     break;
                 case Models.RIGHT:
-                    image = mListImageType2.get(Models.TYPE_BOSS_4);
+                    image = mListImageType2.get(Models.RIGHT);
                     break;
             }
         } else if (getType() == Models.TYPE_BOSS_3) {
             switch (getOrient()) {
                 case Models.UP:
-                    image = mListImageType3.get(Models.TYPE_BOSS_1);
+                    image = mListImageType3.get(Models.UP);
                     break;
                 case Models.DOWN:
-                    image = mListImageType3.get(Models.TYPE_BOSS_2);
+                    image = mListImageType3.get(Models.DOWN);
                     break;
                 case Models.LEFT:
-                    image = mListImageType3.get(Models.TYPE_BOSS_3);
+                    image = mListImageType3.get(Models.LEFT);
                     break;
                 case Models.RIGHT:
-                    image = mListImageType3.get(Models.TYPE_BOSS_4);
+                    image = mListImageType3.get(Models.RIGHT);
                     break;
             }
         } else if (getType() == Models.TYPE_BOSS_4) {
             switch (getOrient()) {
                 case Models.UP:
-                    image = mListImageType4.get(Models.TYPE_BOSS_1);
+                    image = mListImageType4.get(Models.UP);
                     break;
                 case Models.DOWN:
-                    image = mListImageType4.get(Models.TYPE_BOSS_2);
+                    image = mListImageType4.get(Models.DOWN);
                     break;
                 case Models.LEFT:
-                    image = mListImageType4.get(Models.TYPE_BOSS_3);
+                    image = mListImageType4.get(Models.LEFT);
                     break;
                 case Models.RIGHT:
-                    image = mListImageType4.get(Models.TYPE_BOSS_4);
+                    image = mListImageType4.get(Models.RIGHT);
                     break;
             }
         } else if (getType() == Models.TYPE_BOSS_5) {
             switch (getOrient()) {
                 case Models.UP:
-                    image = mListImageType5.get(Models.TYPE_BOSS_1);
+                    image = mListImageType5.get(Models.UP);
                     break;
                 case Models.DOWN:
-                    image = mListImageType5.get(Models.TYPE_BOSS_2);
+                    image = mListImageType5.get(Models.DOWN);
                     break;
                 case Models.LEFT:
-                    image = mListImageType5.get(Models.TYPE_BOSS_3);
+                    image = mListImageType5.get(Models.LEFT);
                     break;
                 case Models.RIGHT:
-                    image = mListImageType5.get(Models.TYPE_BOSS_4);
+                    image = mListImageType5.get(Models.RIGHT);
                     break;
             }
         } else if (getType() == Models.TYPE_BOSS_6) {
             switch (getOrient()) {
                 case Models.UP:
-                    image = mListImageType6.get(Models.TYPE_BOSS_1);
+                    image = mListImageType6.get(Models.UP);
                     break;
                 case Models.DOWN:
-                    image = mListImageType6.get(Models.TYPE_BOSS_2);
+                    image = mListImageType6.get(Models.DOWN);
                     break;
                 case Models.LEFT:
-                    image = mListImageType6.get(Models.TYPE_BOSS_3);
+                    image = mListImageType6.get(Models.LEFT);
                     break;
                 case Models.RIGHT:
-                    image = mListImageType6.get(Models.TYPE_BOSS_4);
+                    image = mListImageType6.get(Models.RIGHT);
                     break;
             }
         }
+
         return image;
     }
 

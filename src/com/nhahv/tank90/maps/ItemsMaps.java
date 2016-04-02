@@ -38,7 +38,8 @@ public class ItemsMaps extends Items {
     public void draw(Graphics2D graphics2D) {
 
         Image image = getImages();
-        graphics2D.drawImage(image, Models.START_MAPS + getX() * Models.SIZE_ITEMS_MAPS, getY() * Models.SIZE_ITEMS_MAPS, getWidth(), getHeight(), null);
+//        graphics2D.drawImage(image, Models.START_MAPS + getX() * Models.SIZE_ITEMS_MAPS, getY() * Models.SIZE_ITEMS_MAPS, getWidth(), getHeight(), null);
+        graphics2D.drawImage(image, getX() * Models.SIZE_ITEMS_MAPS, getY() * Models.SIZE_ITEMS_MAPS, getWidth(), getHeight(), null);
     }
 
     @Override
@@ -69,8 +70,17 @@ public class ItemsMaps extends Items {
     }
 
     public Rectangle getRectangle() {
-
-        return new Rectangle(Models.START_MAPS + getX() * Models.SIZE_ITEMS_MAPS,
+//        return new Rectangle(Models.START_MAPS + getX() * Models.SIZE_ITEMS_MAPS,
+//                getY() * Models.SIZE_ITEMS_MAPS, getWidth(), getHeight());
+        return new Rectangle(getX() * Models.SIZE_ITEMS_MAPS,
                 getY() * Models.SIZE_ITEMS_MAPS, getWidth(), getHeight());
+    }
+
+    public int getPropertyBulletCross() {
+        return propertyBulletCross;
+    }
+
+    public int getPropertyTankCross() {
+        return propertyTankCross;
     }
 }
