@@ -27,10 +27,10 @@ public class ImagesManager {
     public ImagesManager() {
 
         mListMaps = getImage(Models.ITEMS_MAPS, Models.SIZE_ITEMS_MAPS, Models.SIZE_ITEMS_MAPS, Models.NUMBER_ITEMS_MAPS);
-        mListItemsHelp = getImage(Models.ITEMS_HELP, Models.SIZE_ITEMS_MAPS, Models.SIZE_ITEMS_MAPS, Models.NUMBER_ITEMS_HELP);
+//        mListItemsHelp = getImage(Models.ITEMS_HELP, Models.SIZE_ITEMS_MAPS, Models.SIZE_ITEMS_MAPS, Models.NUMBER_ITEMS_HELP);
 
 
-        mListPlayer_1 = getImage(Models.PLAY_ONE_ONE, Models.SIZE_BOOS, Models.SIZE_BOOS, Models.NUMBER_BOOS);
+        mListPlayer_1 = getImage(Models.PLAY_ONE_ONE, Models.SIZE_TANK_PLAYER, Models.SIZE_TANK_PLAYER, Models.NUMBER_BOOS);
         mListBoss_1 = getImage(Models.BOSS_1, Models.SIZE_BOOS, Models.SIZE_BOOS, Models.NUMBER_BOOS);
         mListBoss_2 = getImage(Models.BOSS_2, Models.SIZE_BOOS, Models.SIZE_BOOS, Models.NUMBER_BOOS);
         mListBoss_3 = getImage(Models.BOSS_3, Models.SIZE_BOOS, Models.SIZE_BOOS, Models.NUMBER_BOOS);
@@ -38,7 +38,7 @@ public class ImagesManager {
         mListBoss_5 = getImage(Models.BOSS_5, Models.SIZE_BOOS, Models.SIZE_BOOS, Models.NUMBER_BOOS);
         mListBoss_6 = getImage(Models.BOSS_6, Models.SIZE_BOOS, Models.SIZE_BOOS, Models.NUMBER_BOOS);
 
-        mListBulletBig = getImage(Models.BULLET_NORMAL_BIG, Models.SIZE_BULLET, Models.SIZE_BULLET, Models.NUMBER_BULLET);
+//        mListBulletBig = getImage(Models.BULLET_NORMAL_BIG, Models.SIZE_BULLET, Models.SIZE_BULLET, Models.NUMBER_BULLET);
     }
 
     private ArrayList<Image> getImage(String imgName, int width, int height, int number) {
@@ -92,7 +92,7 @@ public class ImagesManager {
         return mListItemsHelp;
     }
 
-    public static ArrayList<Image> getListPlayer_1(){
+    public static ArrayList<Image> getListPlayer_1() {
         return mListPlayer_1;
     }
 }

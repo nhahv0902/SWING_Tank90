@@ -23,15 +23,11 @@ public class TankPlayer extends Tank {
     //    private int speedMode;
     private int life;
 
-    public TankPlayer(int x, int y, int width, int height, int type, int orient, int speedMode) {
-        super(x, y, width, height, type, orient, speedMode);
+    public TankPlayer(int x, int y, int size, int type, int orient) {
+        super(x, y, size, type, orient);
 
-        setWidth(Models.SIZE_BOOS);
-        setHeight(Models.SIZE_BOOS);
         type = Models.TYPE_PLAYER_1;
-        setSpeedMode(Models.SPEED_DEFAULT);
-        setY(Models.START_PLAYER_HEIGHT);
-
+        setY(Models.SIZE_MAPS - Models.SIZE_TANK_PLAYER);
 
         setListTankOne();
         setListTankTwo();
@@ -143,12 +139,11 @@ public class TankPlayer extends Tank {
             }
         }
 
-        graphics2D.drawImage(image, getX(), getY(), getWidth(), getHeight(), null);
+        graphics2D.drawImage(image, getX(), getY(), getSize(), getSize(), null);
         for (Bullet bullet : getListBullets()) {
             bullet.draw(graphics2D);
         }
     }
-
 
     public void move(MapsManagers mapsManagers, Bird bird) {
 
@@ -156,15 +151,15 @@ public class TankPlayer extends Tank {
             case Models.UP:
                 if (getY() > 0) {
                     setY(getY() - getSpeedMode());
-                    if (inIntersect(mapsManagers, bird)) {
+                    if (isIntersect(mapsManagers, bird)) {
                         setY(getY() + getSpeedMode());
                     }
                 }
                 break;
             case Models.DOWN:
-                if (getY() < Models.SIZE_MAPS - Models.SIZE_BOOS) {
+                if (getY() < Models.SIZE_MAPS - getSize()) {
                     setY(getY() + getSpeedMode());
-                    if (inIntersect(mapsManagers, bird)) {
+                    if (isIntersect(mapsManagers, bird)) {
                         setY(getY() - getSpeedMode());
                     }
                 }
@@ -172,15 +167,15 @@ public class TankPlayer extends Tank {
             case Models.LEFT:
                 if (getX() > 0) {
                     setX(getX() - getSpeedMode());
-                    if (inIntersect(mapsManagers, bird)) {
+                    if (isIntersect(mapsManagers, bird)) {
                         setX(getX() + getSpeedMode());
                     }
                 }
                 break;
             case Models.RIGHT:
-                if (getX() < Models.SIZE_MAPS - Models.SIZE_BOOS) {
+                if (getX() < Models.SIZE_MAPS - getSize()) {
                     setX(getX() + getSpeedMode());
-                    if (inIntersect(mapsManagers, bird)) {
+                    if (isIntersect(mapsManagers, bird)) {
                         setX(getX() - getSpeedMode());
                     }
                 }
@@ -188,25 +183,18 @@ public class TankPlayer extends Tank {
         }
     }
 
-    private boolean inIntersect(MapsManagers mapsManagers, Bird bird) {
+    private boolean isIntersect(MapsManagers mapsManagers, Bird bird) {
 
-        Rectangle rectangle;
         for (ItemsMaps itemsMaps : mapsManagers.getListMaps()) {
-
-            rectangle = itemsMaps.getRectangle().intersection(getRectangle());
-//            if (rectangle.getWidth() >= 2 || rectangle.getHeight() >= 2
             if (itemsMaps.getRectangle().intersects(getRectangle())
                     && itemsMaps.getPropertyTankCross() != Models.MAPS_CROSS) {
                 return true;
             }
         }
 
-
         if (bird.getRectangle().intersects(this.getRectangle())) {
             return true;
         }
-
-
         return false;
     }
 }

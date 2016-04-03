@@ -39,8 +39,8 @@ public class PlayGameTank extends BaseContainer {
 
     @Override
     protected void initComponents() {
-        mPlayerOne = new TankPlayer(0, 0, 0, 0, 0, 0, 1);
-        mBoss = new TankBoss(0, 0, 0, 0, 0, 0, 1);
+        mPlayerOne = new TankPlayer(0, 0, 0, 0, 0);
+        mBoss = new TankBoss(0, 0, 0, 0, 1);
         mKeyValue = new BitSet(256);
     }
 
@@ -56,18 +56,12 @@ public class PlayGameTank extends BaseContainer {
             public void keyPressed(KeyEvent e) {
                 super.keyPressed(e);
                 mKeyValue.set(e.getKeyCode());
-                if (e.getKeyCode() == KeyEvent.VK_ENTER) {
-                    System.out.println("enter");
-                }
             }
 
             @Override
             public void keyReleased(KeyEvent e) {
                 super.keyReleased(e);
                 mKeyValue.clear(e.getKeyCode());
-                if (e.getKeyCode() == KeyEvent.VK_ENTER) {
-                    System.out.println("enter");
-                }
             }
         };
 

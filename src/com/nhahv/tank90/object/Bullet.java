@@ -2,6 +2,8 @@ package com.nhahv.tank90.object;
 
 import com.nhahv.tank90.images.ImageIcons;
 import com.nhahv.tank90.images.ImagesManager;
+import com.nhahv.tank90.maps.ItemsMaps;
+import com.nhahv.tank90.maps.MapsManagers;
 import com.nhahv.tank90.models.Models;
 
 import java.awt.*;
@@ -18,8 +20,8 @@ public class Bullet extends CommonSize {
     private int orient;
     private int type;
 
-    public Bullet(int x, int y, int width, int height, int orient, int type) {
-        super(x, y, width, height);
+    public Bullet(int x, int y, int width, int orient, int type) {
+        super(x, y, width);
         this.speedBullet = Models.SPEED_BULLET_NORMAL;
         this.orient = orient;
         this.type = type;
@@ -75,7 +77,7 @@ public class Bullet extends CommonSize {
                     break;
             }
         }
-        graphics2D.drawImage(image, getX(), getY(), getWidth(), getHeight(), null);
+        graphics2D.drawImage(image, getX(), getY(), getSize(), getSize(), null);
     }
 
     public void setSpeedBullet(int x) {
@@ -99,4 +101,22 @@ public class Bullet extends CommonSize {
         }
     }
 
+    public boolean isIntersect(MapsManagers mapsManagers) {
+
+        for (ItemsMaps itemsMaps : mapsManagers.getListMaps()) {
+            if (itemsMaps.getRectangle().intersects(getRectangle())) {
+                if (itemsMaps.getPropertyBulletCross() == Models.MAPS_BREAK) {
+                    itemsMaps.setType(Models.TYPE_ITEMS_1);
+                    return false;
+                } else if (itemsMaps.getPropertyBulletCross() == Models.MAPS_NO_CROSS) {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
+    public Rectangle getRectangle() {
+        return new Rectangle(getX(), getY(), getSize(), getSize());
+    }
 }

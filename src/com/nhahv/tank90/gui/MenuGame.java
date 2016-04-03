@@ -32,16 +32,16 @@ public class MenuGame extends BaseContainer {
     @Override
     public void initComponents() {
 
-        mTankRun = new ImagesMenu(0, 0, 0, 0, Models.ICON_RUN_DOWN);
+        mTankRun = new ImagesMenu(0, 0, Models.ICON_RUN_DOWN);
         mTankRun.setPaddingX(0);
 
-        mPlayOne = new ImagesMenu(0, 400, 0, 0, Models.ICONS_PLAY_ONE);
-        mPlayOne.setPaddingX(500);
-        mPlayTwo = new ImagesMenu(0, 400 + 40, 0, 0, Models.ICONS_PLAY_TWO);
-        mPlayTwo.setPaddingX(500);
+        mPlayOne = new ImagesMenu(0, 400, Models.ICONS_PLAY_ONE);
+        mPlayOne.setPaddingX(550);
+        mPlayTwo = new ImagesMenu(0, 400 + 40, Models.ICONS_PLAY_TWO);
+        mPlayTwo.setPaddingX(550);
 
-        mIconPlayOne = new ImagesMenu(0, 400, 0, 0, Models.ICON_BT_PLAY);
-        mIconPlayOne.setPaddingX(450);
+        mIconPlayOne = new ImagesMenu(0, 400, Models.ICON_BT_PLAY);
+        mIconPlayOne.setPaddingX(500);
     }
 
     @Override
@@ -106,13 +106,13 @@ public class MenuGame extends BaseContainer {
         super.paintComponent(g);
         Graphics2D graphics2D = (Graphics2D) g;
 
-        ImagesMenu images = new ImagesMenu(0, 100, 0, 0, Models.ICONS_FACE_MENU);
+        ImagesMenu images = new ImagesMenu(0, 100, Models.ICONS_FACE_MENU);
         images.draw(graphics2D);
 
-        images = new ImagesMenu(0, 600, 0, 0, Models.ICON_DOCUMENTS);
+        images = new ImagesMenu(0, 600, Models.ICON_DOCUMENTS);
         images.draw(graphics2D);
 
-        images = new ImagesMenu(0, 500, 0, 0, Models.ICON_MENU);
+        images = new ImagesMenu(0, 500, Models.ICON_MENU);
         images.draw(graphics2D);
 
         mTankRun.draw(graphics2D);

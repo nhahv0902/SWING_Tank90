@@ -21,23 +21,18 @@ public class TankBoss extends Tank {
 
     private int hpTank;
 
-    public TankBoss(int x, int y, int width, int height, int type, int orient, int timeSpeed) {
-        super(x, y, width, height, type, orient, timeSpeed);
-
+    public TankBoss(int x, int y, int size, int type, int orient) {
+        super(x, y, size, type, orient);
         setAllListImage();
 
-        setWidth(Models.SIZE_BOOS);
-        setHeight(Models.SIZE_BOOS);
-
-
         int xRandom = new Random().nextInt(3);
-        if (xRandom == 0) {
-            setX(Models.WIDTH_GUIDE + Models.PADDING_LEFT);
-        } else if (xRandom == 1) {
-            setX(Models.WIDTH_GUIDE + Models.PADDING_LEFT + 13 * Models.SIZE_ITEMS_MAPS);
-        } else if (xRandom == 2) {
-            setX(Models.WIDTH_GUIDE + Models.PADDING_LEFT + 24 * Models.SIZE_ITEMS_MAPS);
 
+        if (xRandom == 0) {
+            setX(0);
+        } else if (xRandom == 1) {
+            setX((Models.NUMBER_COLUMN / 2 - 1) * Models.SIZE_ITEMS_MAPS);
+        } else if (xRandom == 2) {
+            setX(Models.SIZE_MAPS - Models.SIZE_BOOS);
         }
     }
 
@@ -52,12 +47,11 @@ public class TankBoss extends Tank {
     }
 
     public void draw(Graphics2D graphics2D) {
-
-        Image image = getImages();
-        graphics2D.drawImage(image, getX(), getY(), getWidth(), getHeight(), null);
+        graphics2D.drawImage(getImages(), getX(), getY(), getSize(), getSize(), null);
     }
 
     private Image getImages() {
+
         setAllListImage();
         Image image = mListImageType1.get(Models.UP);
 
@@ -155,5 +149,4 @@ public class TankBoss extends Tank {
 
         return image;
     }
-
 }

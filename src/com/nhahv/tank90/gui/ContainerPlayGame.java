@@ -4,8 +4,6 @@ import com.nhahv.tank90.maps.ImagesMenu;
 import com.nhahv.tank90.models.Models;
 
 import java.awt.*;
-import java.awt.event.KeyAdapter;
-import java.awt.event.KeyEvent;
 
 /**
  * Created by Nhahv on 4/2/2016.
@@ -23,9 +21,8 @@ public class ContainerPlayGame extends BaseContainer {
 
     @Override
     protected void initComponents() {
-
         mPlayGameTank = new PlayGameTank();
-        mPlayGameTank.setLocation(Models.WIDTH_GUIDE + Models.PADDING_LEFT, 0);
+        mPlayGameTank.setLocation(Models.WIDTH_GUIDE + Models.PADDING_LEFT, Models.PADDING_TOP);
         mPlayGameTank.setVisible(true);
         mPlayGameTank.requestFocus();
         mPlayGameTank.requestFocus(true);
@@ -39,16 +36,6 @@ public class ContainerPlayGame extends BaseContainer {
 
     @Override
     protected void addEvents() {
-        KeyAdapter keyAdapter = new KeyAdapter() {
-            @Override
-            public void keyPressed(KeyEvent e) {
-                super.keyPressed(e);
-                if (e.getKeyCode() == KeyEvent.VK_ENTER) {
-                    System.out.println("Enter");
-                }
-            }
-        };
-        this.addKeyListener(keyAdapter);
     }
 
     @Override
@@ -60,16 +47,20 @@ public class ContainerPlayGame extends BaseContainer {
 
 
     private void drawGuideLeftRight(Graphics2D graphics2D) {
-        ImagesMenu images = new ImagesMenu(0, 0, 0, 0, Models.ICONS_GUIDE_LEFT);
-        images.setPaddingX(0);
+        ImagesMenu images = new ImagesMenu(0, 0, Models.ICONS_GUIDE_LEFT);
+        images.setPaddingX(Models.PADDING_LEFT / 2);
+        images.setY(Models.PADDING_TOP);
+        images.setHeight(Models.SIZE_MAPS);
         images.draw(graphics2D);
 
-        images = new ImagesMenu(0, 0, 0, 0, Models.ICONS_GUIDE_RIGHT);
-        images.setPaddingX(Models.WIDTH - 250);
+        images = new ImagesMenu(0, 0, Models.ICONS_GUIDE_RIGHT);
+        images.setPaddingX(Models.WIDTH - Models.WIDTH_GUIDE - Models.PADDING_LEFT / 2);
+        images.setY(Models.PADDING_TOP);
+        images.setHeight(Models.SIZE_MAPS);
         images.draw(graphics2D);
     }
 
-    public PlayGameTank getPlayGame(){
+    public PlayGameTank getPlayGame() {
         return mPlayGameTank;
     }
 }

@@ -17,15 +17,15 @@ public class Tank extends CommonSize {
     private int timeFire;
 
 
-    public Tank(int x, int y, int width, int height, int type, int orient, int speedMode) {
-        super(x, y, width, height);
-        this.speedMode = speedMode;
+    public Tank(int x, int y, int size, int type, int orient) {
+        super(x, y, size);
+
+        setSize(Models.SIZE_BOOS);
+        this.speedMode = Models.SPEED_DEFAULT;
         this.type = type;
         this.orient = orient;
         this.timeFire = 0;
         this.mListBullets = new ArrayList<>();
-
-
     }
 
     public int getType() {
@@ -53,25 +53,7 @@ public class Tank extends CommonSize {
         this.speedMode = speedMode;
     }
 
-//    public void move() {
-//        switch (getOrient()) {
-//            case Models.UP:
-//                setY(getY() - getSpeedMode());
-//                break;
-//            case Models.DOWN:
-//                setY(getY() + getSpeedMode());
-//                break;
-//            case Models.LEFT:
-//                setX(getX() - getSpeedMode());
-//                break;
-//            case Models.RIGHT:
-//                setX(getX() + getSpeedMode());
-//                break;
-//        }
-//    }
-
     public boolean isFire() {
-
         return timeFire <= 0;
     }
 
@@ -88,7 +70,6 @@ public class Tank extends CommonSize {
     public void tankFire() {
 
         if (isFire()) {
-            System.out.println("fire");
             int x = getX(), y = getY();
             if (getOrient() == Models.UP || getOrient() == Models.DOWN) {
                 x = getX() + Models.SIZE_BULLET + 3;
@@ -97,13 +78,12 @@ public class Tank extends CommonSize {
             }
 
             if (getOrient() == Models.RIGHT) {
-                x += Models.SIZE_BOOS;
+                x += getSize();
             }
             if (getOrient() == Models.DOWN) {
-                y += Models.SIZE_BOOS;
+                y += getSize();
             }
-
-            Bullet bullet = new Bullet(x, y, Models.SIZE_BULLET, Models.SIZE_BULLET, getOrient(), Models.TYPE_BULLET_NORMAL);
+            Bullet bullet = new Bullet(x, y, Models.SIZE_BULLET, getOrient(), Models.TYPE_BULLET_NORMAL);
             mListBullets.add(bullet);
             setTimeFire();
         }
@@ -127,14 +107,6 @@ public class Tank extends CommonSize {
     }
 
     public Rectangle getRectangle() {
-        Rectangle rectangle = null;
-        if (orient == Models.UP || orient == Models.DOWN) {
-            rectangle = new Rectangle(getX(), getY(), Models.SIZE_BOOS, Models.SIZE_BOOS);
-
-        } else if (orient == Models.LEFT || orient == Models.RIGHT) {
-            rectangle = new Rectangle(getX(), getY(), Models.SIZE_BOOS, Models.SIZE_BOOS);
-        }
-
-        return rectangle;
+        return new Rectangle(getX(), getY(), getSize(), getSize());
     }
 }

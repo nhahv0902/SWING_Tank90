@@ -13,15 +13,15 @@ public abstract class Items extends CommonSize {
     private int type;
     private ArrayList<Image> mListImages;
 
-    public Items(int x, int y, int width, int height, int type) {
-        super(x, y, width, height);
+    public Items(int x, int y, int size, int type) {
+        super(x, y, size);
         this.type = type;
     }
 
     public abstract void draw(Graphics2D graphics2D);
 
 
-    protected abstract Image getImages();
+    public abstract Image getImages();
 
     public int getType() {
         return type;

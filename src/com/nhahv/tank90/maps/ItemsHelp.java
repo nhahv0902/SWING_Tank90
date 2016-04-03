@@ -11,20 +11,20 @@ import java.awt.*;
 public class ItemsHelp extends Items {
 
 
-    public ItemsHelp(int x, int y, int width, int height, int type) {
-        super(x, y, width, height, type);
+    public ItemsHelp(int x, int y, int width, int type) {
+        super(x, y, width, type);
         setListImages(ImagesManager.getListItemsHelp());
     }
 
     @Override
-    public void draw(Graphics2D graphics2D ) {
+    public void draw(Graphics2D graphics2D) {
         Image image = getImages();
-        graphics2D.drawImage(image, getX(), getY(), getWidth(), getHeight(), null);
+        graphics2D.drawImage(image, getX(), getY(), getSize(), getSize(), null);
     }
 
 
     @Override
-    protected Image getImages() {
+    public Image getImages() {
         Image image = getListImages().get(Models.TYPE_HELP_1);
         switch (getType()) {
             case Models.TYPE_HELP_1:

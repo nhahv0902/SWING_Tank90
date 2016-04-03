@@ -14,7 +14,6 @@ public class MyContainer extends BaseContainer {
     private MenuGame mMenuGame;
     private CardLayout mCardLayout;
 
-    //    private PlayGame mPlayGame;
     private ContainerPlayGame mPlayGame;
     private ExitGUI mExitGUI;
     private Interfaces mInterface;
@@ -44,7 +43,6 @@ public class MyContainer extends BaseContainer {
 
         mMenuGame = new MenuGame();
         mMenuGame.setExitGUI(mInterface);
-//        mPlayGame = new PlayGame();
         mPlayGame = new ContainerPlayGame();
     }
 

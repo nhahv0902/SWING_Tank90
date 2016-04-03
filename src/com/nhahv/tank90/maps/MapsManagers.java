@@ -31,7 +31,7 @@ public class MapsManagers {
             while ((content = buff.readLine()) != null) {
                 for (int column = 0; column < content.length(); column++) {
                     type = Integer.parseInt(content.charAt(column) + "");
-                    mListMaps.add(new ItemsMaps(column, row, Models.SIZE_ITEMS_MAPS, Models.SIZE_ITEMS_MAPS, type));
+                    mListMaps.add(new ItemsMaps(column, row, Models.SIZE_ITEMS_MAPS, type));
                 }
                 row++;
             }

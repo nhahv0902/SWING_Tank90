@@ -16,7 +16,7 @@ public class ImageIcons {
     public ImageIcons(String path) {
 
         imageIcon = new ImageIcon(getClass().getResource(path));
-        this.image = imageIcon.getImage();
+        image = imageIcon.getImage();
         width = imageIcon.getIconWidth();
         height = imageIcon.getIconHeight();
     }

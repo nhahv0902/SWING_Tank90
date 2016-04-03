@@ -1,5 +1,7 @@
 package com.nhahv.tank90.models;
 
+import java.awt.*;
+
 /**
  * Created by Nhahv on 3/28/2016.
  */
@@ -10,20 +12,11 @@ public class Models {
     public static final int LEFT = 2;
     public static final int RIGHT = 3;
 
-    public static final int WIDTH = 1200 + 20;
-    public static final int HEIGHT = 706;
-//    public static final int WIDTH =
-//            (int) Toolkit.getDefaultToolkit().getScreenSize().getWidth();
-//    public static final int HEIGHT =
-//            (int) Toolkit.getDefaultToolkit().getScreenSize().getHeight();
+    public static final int WIDTH = // 1366
+            (int) Toolkit.getDefaultToolkit().getScreenSize().getWidth();
+    public static final int HEIGHT = //768
+            (int) Toolkit.getDefaultToolkit().getScreenSize().getHeight();
 
-    public static final int WIDTH_BUTTON = 50;
-    public static final int HEIGHT_BUTTON = 50;
-    public static final int WIDTH_TEXT_PLAY = 200;
-    public static final int HEIGHT_TEXT_PLAY = 50;
-
-    public static final String PLAY_ONE = "PLAY_ONE";
-    public static final String PLAY_TWO = "PLAY_TWO";
     public static final String MENU_GAME = "0";
     public static final String PLAY_GAME = "1";
 
@@ -90,9 +83,11 @@ public class Models {
     public static final int PADDING_TANK = 6;
 
 
-    public static int TYPE_PLAYER_1 = 0;
-    public static int TYPE_PLAYER_2 = 1;
+    // type of player
+    public static final int TYPE_PLAYER_1 = 0;
+    public static final int TYPE_PLAYER_2 = 1;
 
+    // type of boss
     public static final int TYPE_BOSS_1 = 0;
     public static final int TYPE_BOSS_2 = 1;
     public static final int TYPE_BOSS_3 = 2;
@@ -100,13 +95,12 @@ public class Models {
     public static final int TYPE_BOSS_5 = 4;
     public static final int TYPE_BOSS_6 = 5;
 
-
-    public static final int SIZE_BOOS = 52;
+    public static final int SIZE_BOOS = 56;
     public static final int NUMBER_BOOS = 4;
 
-    public static final int SIZE_ITEMS_MAPS = 26;
+    public static final int SIZE_ITEMS_MAPS = 28;
     public static final int NUMBER_ITEMS_MAPS = 6;
-
+    public static final int NUMBER_COLUMN = 26;
     public static final int SIZE_ITEMS_HELP = 52;
     public static final int NUMBER_ITEMS_HELP = 7;
 
@@ -137,17 +131,14 @@ public class Models {
     public static final int TYPE_BULLET_NORMAL = 0;
     public static final int TYPE_BULLET_BIG = 1;
 
-    public static final int PADDING_LEFT = 20;
+    public static final int PADDING_LEFT = 69;
+    public static final int PADDING_TOP = 20;
+
     public static final int WIDTH_GUIDE = 250;
-    public static final int SIZE_MAPS = 676;
-    public static final int START_MAPS = WIDTH_GUIDE + PADDING_LEFT;
+    public static final int SIZE_MAPS = 728;
 
-    public static final int START_GUIDE_RIGHT = WIDTH_GUIDE + SIZE_MAPS + PADDING_LEFT * 2;
-
-    //    public static final int START_PLAYER_ONE = WIDTH_GUIDE + 20 + 8 * SIZE_ITEMS_MAPS;
     public static final int START_PLAYER_ONE = 8 * SIZE_ITEMS_MAPS;
     public static final int START_PLAYER_TWO = 16 * SIZE_ITEMS_MAPS;
-    public static final int START_PLAYER_HEIGHT = HEIGHT - SIZE_BOOS * 2 + SIZE_ITEMS_MAPS;
 
     public static final int SPEED_DEFAULT = 1;
     public static final int SPEED_MAX = 2;
@@ -158,9 +149,9 @@ public class Models {
     public static final int SPEED_BULLET_NORMAL = 1;
     public static final int SPEED_BULLET_MAX = 2;
 
-
     public static final int TIME_OUT = 400;
-    public static final int TIME_SLEEP = 12;
+    public static final int TIME_SLEEP = 8;
 
-
+    public static final int SIZE_TANK_PLAYER = 56;
+    public static final int SIZE_TANK_RUN = 70;
 }

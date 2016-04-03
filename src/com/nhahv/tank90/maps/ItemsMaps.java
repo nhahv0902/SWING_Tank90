@@ -13,8 +13,9 @@ public class ItemsMaps extends Items {
     private int propertyTankCross; // tank can cross
     private int propertyBulletCross; // bullet can cross
 
-    public ItemsMaps(int x, int y, int width, int height, int type) {
-        super(x, y, width, height, type);
+    public ItemsMaps(int x, int y, int size, int type) {
+        super(x, y, size, type);
+
         setListImages(ImagesManager.getListMaps());
 
         if (type == Models.TYPE_ITEMS_1 || type == Models.TYPE_ITEMS_4
@@ -36,10 +37,8 @@ public class ItemsMaps extends Items {
 
     @Override
     public void draw(Graphics2D graphics2D) {
-
-        Image image = getImages();
-//        graphics2D.drawImage(image, Models.START_MAPS + getX() * Models.SIZE_ITEMS_MAPS, getY() * Models.SIZE_ITEMS_MAPS, getWidth(), getHeight(), null);
-        graphics2D.drawImage(image, getX() * Models.SIZE_ITEMS_MAPS, getY() * Models.SIZE_ITEMS_MAPS, getWidth(), getHeight(), null);
+        graphics2D.drawImage(getImages(), getX() * Models.SIZE_ITEMS_MAPS,
+                getY() * Models.SIZE_ITEMS_MAPS, getSize(), getSize(), null);
     }
 
     @Override
@@ -70,10 +69,8 @@ public class ItemsMaps extends Items {
     }
 
     public Rectangle getRectangle() {
-//        return new Rectangle(Models.START_MAPS + getX() * Models.SIZE_ITEMS_MAPS,
-//                getY() * Models.SIZE_ITEMS_MAPS, getWidth(), getHeight());
         return new Rectangle(getX() * Models.SIZE_ITEMS_MAPS,
-                getY() * Models.SIZE_ITEMS_MAPS, getWidth(), getHeight());
+                getY() * Models.SIZE_ITEMS_MAPS, getSize(), getSize());
     }
 
     public int getPropertyBulletCross() {

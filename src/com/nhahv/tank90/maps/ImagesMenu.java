@@ -1,7 +1,6 @@
 package com.nhahv.tank90.maps;
 
 import com.nhahv.tank90.images.ImageIcons;
-import com.nhahv.tank90.object.CommonSize;
 import com.nhahv.tank90.models.Models;
 
 import java.awt.*;
@@ -9,12 +8,14 @@ import java.awt.*;
 /**
  * Created by Nhahv on 3/31/2016.
  */
-public class ImagesMenu extends CommonSize {
+public class ImagesMenu {
 
     private Image mImage;
+    private int x, y, width, height;
 
-    public ImagesMenu(int x, int y, int width, int height, String path) {
-        super(x, y, width, height);
+    public ImagesMenu(int x, int y, String path) {
+        this.x = x;
+        this.y = y;
         setImage(path);
     }
 
@@ -28,7 +29,6 @@ public class ImagesMenu extends CommonSize {
         setWidth(imageIcons.getWidth());
         setHeight(imageIcons.getHeight());
         setX((Models.WIDTH - getWidth()) / 2);
-
     }
 
     public void draw(Graphics2D graphics2D) {
@@ -36,13 +36,14 @@ public class ImagesMenu extends CommonSize {
     }
 
     public void move() {
-        if (getY() < Models.HEIGHT - 89 && getX() == 0) {
+        if (getY() < Models.HEIGHT - Models.SIZE_TANK_RUN && getX() == 0) {
             moveDown();
         }
-        if (getY() >= Models.HEIGHT - 89 && getX() < Models.WIDTH - 70) {
+        if ((getY() >= Models.HEIGHT - Models.SIZE_TANK_RUN)
+                && (getX() < Models.WIDTH - Models.SIZE_TANK_RUN)) {
             moveRight();
         }
-        if (getX() >= Models.WIDTH - 70) {
+        if (getX() >= Models.WIDTH - Models.SIZE_TANK_RUN) {
             moveUp();
         }
         if (getY() <= 0 && getX() > 0) {
@@ -80,5 +81,37 @@ public class ImagesMenu extends CommonSize {
         } else {
             setY(getY() - 40);
         }
+    }
+
+    public int getX() {
+        return x;
+    }
+
+    public void setX(int x) {
+        this.x = x;
+    }
+
+    public int getY() {
+        return y;
+    }
+
+    public void setY(int y) {
+        this.y = y;
+    }
+
+    public int getWidth() {
+        return width;
+    }
+
+    public void setWidth(int width) {
+        this.width = width;
+    }
+
+    public int getHeight() {
+        return height;
+    }
+
+    public void setHeight(int height) {
+        this.height = height;
     }
 }

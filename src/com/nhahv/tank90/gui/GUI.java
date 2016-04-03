@@ -27,8 +27,8 @@ public class GUI extends JFrame {
 
     private void initGUI() {
 
-//        this.setExtendedState(JFrame.MAXIMIZED_BOTH);
-//        this.setUndecorated(true);
+        this.setExtendedState(JFrame.MAXIMIZED_BOTH);
+        this.setUndecorated(true);
         this.setTitle(Models.TITLE);
         this.setSize(Models.WIDTH, Models.HEIGHT);
         this.setResizable(false);

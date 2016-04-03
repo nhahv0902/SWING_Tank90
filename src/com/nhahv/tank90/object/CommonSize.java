@@ -5,13 +5,12 @@ package com.nhahv.tank90.object;
  */
 public class CommonSize {
 
-    private int x, y, width, height;
+    private int x, y, size;
 
-    public CommonSize(int x, int y, int width, int height) {
+    public CommonSize(int x, int y, int size) {
         this.x = x;
         this.y = y;
-        this.width = width;
-        this.height = height;
+        this.size = size;
     }
 
     public int getX() {
@@ -30,19 +29,11 @@ public class CommonSize {
         this.y = y;
     }
 
-    public int getWidth() {
-        return width;
+    public int getSize() {
+        return size;
     }
 
-    public void setWidth(int width) {
-        this.width = width;
-    }
-
-    public int getHeight() {
-        return height;
-    }
-
-    public void setHeight(int height) {
-        this.height = height;
+    public void setSize(int width) {
+        this.size = width;
     }
 }
