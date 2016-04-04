@@ -38,7 +38,7 @@ public class ImagesManager {
         mListBoss_5 = getImage(Models.BOSS_5, Models.SIZE_BOOS, Models.SIZE_BOOS, Models.NUMBER_BOOS);
         mListBoss_6 = getImage(Models.BOSS_6, Models.SIZE_BOOS, Models.SIZE_BOOS, Models.NUMBER_BOOS);
 
-//        mListBulletBig = getImage(Models.BULLET_NORMAL_BIG, Models.SIZE_BULLET, Models.SIZE_BULLET, Models.NUMBER_BULLET);
+        mListBulletBig = getImage(Models.BULLET_NORMAL_BIG, Models.SIZE_BULLET, Models.SIZE_BULLET, Models.NUMBER_BULLET);
     }
 
     private ArrayList<Image> getImage(String imgName, int width, int height, int number) {

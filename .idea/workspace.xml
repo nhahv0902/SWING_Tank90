@@ -2,40 +2,40 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f0ad8e46-e5e5-4a58-8264-10eb40f09cbe" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/IMAGES/player_one.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/nhahv/tank90/gui/ContainerPlayGame.java" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/nhahv/tank90/gui/PlayGameTank.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/IMAGES/boss_7.png" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/IMAGES/start.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/nhahv/tank90/object/Tank.java" afterPath="$PROJECT_DIR$/src/com/nhahv/tank90/object/Tank.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/nhahv/tank90/object/TankBoss.java" afterPath="$PROJECT_DIR$/src/com/nhahv/tank90/object/TankBoss.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Tank90/com/nhahv/tank90/gui/GUI$1.class" afterPath="$PROJECT_DIR$/out/production/Tank90/com/nhahv/tank90/gui/GUI$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/nhahv/tank90/gui/GUI.java" afterPath="$PROJECT_DIR$/src/com/nhahv/tank90/gui/GUI.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/nhahv/tank90/models/Models.java" afterPath="$PROJECT_DIR$/src/com/nhahv/tank90/models/Models.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Tank90/com/nhahv/tank90/models/Models.class" afterPath="$PROJECT_DIR$/out/production/Tank90/com/nhahv/tank90/models/Models.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Tank90/com/nhahv/tank90/object/Tank.class" afterPath="$PROJECT_DIR$/out/production/Tank90/com/nhahv/tank90/object/Tank.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/nhahv/tank90/object/TankPlayer.java" afterPath="$PROJECT_DIR$/src/com/nhahv/tank90/object/TankPlayer.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Tank90/com/nhahv/tank90/gui/PlayGame.class" afterPath="$PROJECT_DIR$/out/production/Tank90/com/nhahv/tank90/gui/PlayGame.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/nhahv/tank90/maps/Bird.java" afterPath="$PROJECT_DIR$/src/com/nhahv/tank90/maps/Bird.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/nhahv/tank90/images/ImagesManager.java" afterPath="$PROJECT_DIR$/src/com/nhahv/tank90/images/ImagesManager.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/nhahv/tank90/gui/MyContainer.java" afterPath="$PROJECT_DIR$/src/com/nhahv/tank90/gui/MyContainer.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Tank90/com/nhahv/tank90/maps/ItemsHelp.class" afterPath="$PROJECT_DIR$/out/production/Tank90/com/nhahv/tank90/maps/ItemsHelp.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Tank90/com/nhahv/tank90/object/TankBoss.class" afterPath="$PROJECT_DIR$/out/production/Tank90/com/nhahv/tank90/object/TankBoss.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Tank90/com/nhahv/tank90/maps/ItemsMaps.class" afterPath="$PROJECT_DIR$/out/production/Tank90/com/nhahv/tank90/maps/ItemsMaps.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Tank90/com/nhahv/tank90/object/TankPlayer.class" afterPath="$PROJECT_DIR$/out/production/Tank90/com/nhahv/tank90/object/TankPlayer.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/nhahv/tank90/gui/PlayGame.java" afterPath="$PROJECT_DIR$/src/com/nhahv/tank90/gui/PlayGame.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/IMAGES/player_one.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/IMAGES/boss_7.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/nhahv/tank90/gui/ContainerPlayGame.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Tank90/com/nhahv/tank90/object/Bullet.class" afterPath="$PROJECT_DIR$/out/production/Tank90/com/nhahv/tank90/object/Bullet.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Tank90/com/nhahv/tank90/images/ImagesManager.class" afterPath="$PROJECT_DIR$/out/production/Tank90/com/nhahv/tank90/images/ImagesManager.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Tank90/com/nhahv/tank90/gui/PlayGame.class" afterPath="$PROJECT_DIR$/out/production/Tank90/com/nhahv/tank90/gui/PlayGame.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/nhahv/tank90/gui/PlayGame.java" afterPath="$PROJECT_DIR$/src/com/nhahv/tank90/gui/PlayGame.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/nhahv/tank90/maps/Bird.java" afterPath="$PROJECT_DIR$/src/com/nhahv/tank90/maps/Bird.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Tank90/com/nhahv/tank90/gui/GUI$1.class" afterPath="$PROJECT_DIR$/out/production/Tank90/com/nhahv/tank90/gui/GUI$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Tank90/com/nhahv/tank90/maps/Bird.class" afterPath="$PROJECT_DIR$/out/production/Tank90/com/nhahv/tank90/maps/Bird.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/nhahv/tank90/gui/MyContainer.java" afterPath="$PROJECT_DIR$/src/com/nhahv/tank90/gui/MyContainer.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Tank90/com/nhahv/tank90/object/TankBoss.class" afterPath="$PROJECT_DIR$/out/production/Tank90/com/nhahv/tank90/object/TankBoss.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Tank90/com/nhahv/tank90/gui/MyContainer.class" afterPath="$PROJECT_DIR$/out/production/Tank90/com/nhahv/tank90/gui/MyContainer.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Tank90/com/nhahv/tank90/maps/Items.class" afterPath="$PROJECT_DIR$/out/production/Tank90/com/nhahv/tank90/maps/Items.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Tank90/com/nhahv/tank90/images/ImagesManager.class" afterPath="$PROJECT_DIR$/out/production/Tank90/com/nhahv/tank90/images/ImagesManager.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/nhahv/tank90/maps/ItemsMaps.java" afterPath="$PROJECT_DIR$/src/com/nhahv/tank90/maps/ItemsMaps.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/nhahv/tank90/object/Bullet.java" afterPath="$PROJECT_DIR$/src/com/nhahv/tank90/object/Bullet.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/nhahv/tank90/images/ImagesManager.java" afterPath="$PROJECT_DIR$/src/com/nhahv/tank90/images/ImagesManager.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/nhahv/tank90/object/Tank.java" afterPath="$PROJECT_DIR$/src/com/nhahv/tank90/object/Tank.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Tank90/com/nhahv/tank90/maps/MapsManagers.class" afterPath="$PROJECT_DIR$/out/production/Tank90/com/nhahv/tank90/maps/MapsManagers.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Tank90/com/nhahv/tank90/gui/GUI.class" afterPath="$PROJECT_DIR$/out/production/Tank90/com/nhahv/tank90/gui/GUI.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/nhahv/tank90/object/Bullet.java" afterPath="$PROJECT_DIR$/src/com/nhahv/tank90/object/Bullet.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/nhahv/tank90/object/TankBoss.java" afterPath="$PROJECT_DIR$/src/com/nhahv/tank90/object/TankBoss.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/nhahv/tank90/maps/ItemsHelp.java" afterPath="$PROJECT_DIR$/src/com/nhahv/tank90/maps/ItemsHelp.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Tank90/com/nhahv/tank90/object/TankPlayer.class" afterPath="$PROJECT_DIR$/out/production/Tank90/com/nhahv/tank90/object/TankPlayer.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Tank90/com/nhahv/tank90/models/Models.class" afterPath="$PROJECT_DIR$/out/production/Tank90/com/nhahv/tank90/models/Models.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Tank90/com/nhahv/tank90/gui/GUI.class" afterPath="$PROJECT_DIR$/out/production/Tank90/com/nhahv/tank90/gui/GUI.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Tank90/com/nhahv/tank90/maps/ItemsMaps.class" afterPath="$PROJECT_DIR$/out/production/Tank90/com/nhahv/tank90/maps/ItemsMaps.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/nhahv/tank90/models/Models.java" afterPath="$PROJECT_DIR$/src/com/nhahv/tank90/models/Models.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Tank90/com/nhahv/tank90/maps/ItemsHelp.class" afterPath="$PROJECT_DIR$/out/production/Tank90/com/nhahv/tank90/maps/ItemsHelp.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/nhahv/tank90/gui/GUI.java" afterPath="$PROJECT_DIR$/src/com/nhahv/tank90/gui/GUI.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/nhahv/tank90/object/TankPlayer.java" afterPath="$PROJECT_DIR$/src/com/nhahv/tank90/object/TankPlayer.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Tank90/com/nhahv/tank90/object/Tank.class" afterPath="$PROJECT_DIR$/out/production/Tank90/com/nhahv/tank90/object/Tank.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/nhahv/tank90/maps/ItemsMaps.java" afterPath="$PROJECT_DIR$/src/com/nhahv/tank90/maps/ItemsMaps.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Tank90/com/nhahv/tank90/gui/MyContainer$1.class" afterPath="$PROJECT_DIR$/out/production/Tank90/com/nhahv/tank90/gui/MyContainer$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Tank90/com/nhahv/tank90/maps/Bird.class" afterPath="$PROJECT_DIR$/out/production/Tank90/com/nhahv/tank90/maps/Bird.class" />
     </list>
     <ignored path="Tank90.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -57,59 +57,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="TankPlayer.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/nhahv/tank90/object/TankPlayer.java">
+      <file leaf-file-name="Tank.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/nhahv/tank90/object/Tank.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2827">
-              <caret line="157" column="22" selection-start-line="157" selection-start-column="22" selection-end-line="157" selection-end-column="22" />
+            <state relative-caret-position="1075">
+              <caret line="63" column="16" selection-start-line="63" selection-start-column="16" selection-end-line="63" selection-end-column="16" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Tank.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/nhahv/tank90/object/Tank.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="377">
-              <caret line="109" column="67" selection-start-line="109" selection-start-column="67" selection-end-line="109" selection-end-column="67" />
-              <folding>
-                <element signature="e#2670#2671#0" expanded="true" />
-                <element signature="e#2744#2745#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CommonSize.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/com/nhahv/tank90/object/CommonSize.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="402">
-              <caret line="37" column="5" selection-start-line="37" selection-start-column="5" selection-end-line="37" selection-end-column="5" />
-              <folding>
-                <element signature="method#CommonSize#0;class#CommonSize#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Bullet.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Bullet.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/nhahv/tank90/object/Bullet.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="202">
-              <caret line="88" column="27" selection-start-line="88" selection-start-column="27" selection-end-line="88" selection-end-column="27" />
-              <folding>
-                <element signature="e#3766#3767#0" expanded="true" />
-                <element signature="e#3840#3841#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TankBoss.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/nhahv/tank90/object/TankBoss.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="125">
-              <caret line="28" column="0" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
+            <state relative-caret-position="552">
+              <caret line="86" column="18" selection-start-line="86" selection-start-column="18" selection-end-line="86" selection-end-column="18" />
               <folding />
             </state>
           </provider>
@@ -118,8 +80,51 @@
       <file leaf-file-name="ItemsMaps.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/nhahv/tank90/maps/ItemsMaps.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1273">
-              <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+            <state relative-caret-position="-672">
+              <caret line="20" column="16" selection-start-line="20" selection-start-column="16" selection-end-line="20" selection-end-column="16" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MenuGame.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/nhahv/tank90/gui/MenuGame.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2925">
+              <caret line="126" column="5" selection-start-line="124" selection-start-column="2" selection-end-line="126" selection-end-column="5" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MyContainer.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/nhahv/tank90/gui/MyContainer.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="575">
+              <caret line="27" column="31" selection-start-line="27" selection-start-column="31" selection-end-line="27" selection-end-column="31" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ContainerPlayGame.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/nhahv/tank90/gui/ContainerPlayGame.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1375">
+              <caret line="60" column="5" selection-start-line="48" selection-start-column="3" selection-end-line="60" selection-end-column="5" />
+              <folding>
+                <element signature="e#1723#1724#0" expanded="true" />
+                <element signature="e#1755#1756#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Models.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/nhahv/tank90/models/Models.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="250">
+              <caret line="10" column="37" selection-start-line="10" selection-start-column="37" selection-end-line="10" selection-end-column="37" />
               <folding />
             </state>
           </provider>
@@ -128,43 +133,32 @@
       <file leaf-file-name="MapsManagers.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/nhahv/tank90/maps/MapsManagers.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="13" column="43" selection-start-line="13" selection-start-column="2" selection-end-line="13" selection-end-column="43" />
+            <state relative-caret-position="400">
+              <caret line="49" column="0" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Models.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/nhahv/tank90/models/Models.java">
+      <file leaf-file-name="GUI.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/nhahv/tank90/gui/GUI.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="227">
-              <caret line="148" column="28" selection-start-line="148" selection-start-column="28" selection-end-line="148" selection-end-column="28" />
+            <state relative-caret-position="1275">
+              <caret line="59" column="31" selection-start-line="59" selection-start-column="31" selection-end-line="59" selection-end-column="31" />
+              <folding>
+                <element signature="e#2242#2243#0" expanded="true" />
+                <element signature="e#2280#2281#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PlayGame.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/nhahv/tank90/gui/PlayGame.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1675">
+              <caret line="76" column="36" selection-start-line="76" selection-start-column="36" selection-end-line="76" selection-end-column="36" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Items.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/nhahv/tank90/maps/Items.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="252">
-              <caret line="29" column="35" selection-start-line="29" selection-start-column="35" selection-end-line="29" selection-end-column="35" />
-              <folding>
-                <element signature="e#611#612#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PlayGameTank.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/nhahv/tank90/gui/PlayGameTank.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="232">
-              <caret line="72" column="44" selection-start-line="72" selection-start-column="44" selection-end-line="72" selection-end-column="44" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -189,28 +183,31 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/com/nhahv/tank90/maps/Bird.java" />
         <option value="$PROJECT_DIR$/src/com/nhahv/tank90/main/RectangleFrame1.java" />
-        <option value="$PROJECT_DIR$/src/com/nhahv/tank90/maps/Items.java" />
-        <option value="$PROJECT_DIR$/src/com/nhahv/tank90/maps/MapsManagers.java" />
         <option value="$PROJECT_DIR$/src/com/nhahv/tank90/maps/ItemsHelp.java" />
         <option value="$PROJECT_DIR$/src/com/nhahv/tank90/gui/GUI.java" />
         <option value="$PROJECT_DIR$/src/com/nhahv/tank90/gui/BaseContainer.java" />
-        <option value="$PROJECT_DIR$/src/com/nhahv/tank90/gui/PlayGame.java" />
         <option value="$PROJECT_DIR$/src/com/nhahv/tank90/images/ImageIcons.java" />
         <option value="$PROJECT_DIR$/src/com/nhahv/tank90/maps/ImagesMenu.java" />
         <option value="$PROJECT_DIR$/src/com/nhahv/tank90/gui/MenuGame.java" />
         <option value="$PROJECT_DIR$/src/com/nhahv/tank90/gui/ContainerPlayGame.java" />
-        <option value="$PROJECT_DIR$/src/com/nhahv/tank90/gui/MyContainer.java" />
-        <option value="$PROJECT_DIR$/src/com/nhahv/tank90/images/ImagesManager.java" />
         <option value="$PROJECT_DIR$/src/com/nhahv/tank90/object/TankBoss.java" />
+        <option value="$PROJECT_DIR$/src/com/nhahv/tank90/object/CommonSize.java" />
+        <option value="$PROJECT_DIR$/src/com/nhahv/tank90/images/ImagesManager.java" />
+        <option value="$PROJECT_DIR$/src/com/nhahv/tank90/maps/Items.java" />
+        <option value="$PROJECT_DIR$/src/com/nhahv/tank90/maps/ItemsMap.java" />
+        <option value="$PROJECT_DIR$/src/com/nhahv/tank90/maps/ItemMaps.java" />
+        <option value="$PROJECT_DIR$/src/com/nhahv/tank90/maps/MapsManagers.java" />
         <option value="$PROJECT_DIR$/src/com/nhahv/tank90/maps/ItemsMaps.java" />
-        <option value="$PROJECT_DIR$/src/com/nhahv/tank90/object/Tank.java" />
         <option value="$PROJECT_DIR$/src/com/nhahv/tank90/object/TankPlayer.java" />
         <option value="$PROJECT_DIR$/src/com/nhahv/tank90/gui/PlayGameTank.java" />
-        <option value="$PROJECT_DIR$/src/com/nhahv/tank90/models/Models.java" />
+        <option value="$PROJECT_DIR$/src/com/nhahv/tank90/maps/Bird.java" />
         <option value="$PROJECT_DIR$/src/com/nhahv/tank90/object/Bullet.java" />
-        <option value="$PROJECT_DIR$/src/com/nhahv/tank90/object/CommonSize.java" />
+        <option value="$PROJECT_DIR$/src/com/nhahv/tank90/object/Tank.java" />
+        <option value="$PROJECT_DIR$/src/com/nhahv/tank90/main/Main.java" />
+        <option value="$PROJECT_DIR$/src/com/nhahv/tank90/gui/PlayGame.java" />
+        <option value="$PROJECT_DIR$/src/com/nhahv/tank90/models/Models.java" />
+        <option value="$PROJECT_DIR$/src/com/nhahv/tank90/gui/MyContainer.java" />
       </list>
     </option>
   </component>
@@ -245,7 +242,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -452,8 +448,9 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
+      <pane id="Scratches" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -461,6 +458,9 @@
     <property name="extract.method.default.visibility" value="private" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.nhahv.tank90.maps" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Nhahv\Desktop\swing_tank90\src\IMAGES" />
       <recent name="C:\Users\Nhahv\Desktop\Tank90\src\IMAGES" />
@@ -769,7 +769,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -780,12 +780,11 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32857144" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32857144" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20347957" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32857144" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20196672" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -796,6 +795,7 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32857144" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -818,54 +818,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/com/nhahv/tank90/maps/MapsManagers.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1125">
-          <caret line="51" column="37" selection-start-line="51" selection-start-column="37" selection-end-line="51" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/nhahv/tank90/gui/PlayGame.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/nhahv/tank90/main/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
-          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/nhahv/tank90/models/Models.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3725">
-          <caret line="149" column="47" selection-start-line="149" selection-start-column="47" selection-end-line="149" selection-end-column="47" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/nhahv/tank90/object/Tank.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="675">
-          <caret line="35" column="31" selection-start-line="35" selection-start-column="31" selection-end-line="35" selection-end-column="31" />
-          <folding>
-            <element signature="e#1103#1104#0" expanded="true" />
-            <element signature="e#1139#1140#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/nhahv/tank90/object/TankBoss.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
-          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/MAPS/map9">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-150">
@@ -908,25 +860,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/IMAGES/items_maps.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/IMAGES/start.png">
       <provider selected="true" editor-type-id="images">
         <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/nhahv/tank90/main/RectangleFrame1.java" />
-    <entry file="file://$PROJECT_DIR$/src/com/nhahv/tank90/main/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
-          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/IMAGES/boss_1.png">
       <provider selected="true" editor-type-id="images">
         <state />
@@ -990,14 +929,6 @@
     <entry file="file://$PROJECT_DIR$/src/IMAGES/boss_5.png">
       <provider selected="true" editor-type-id="images">
         <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/nhahv/tank90/maps/ItemsHelp.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-453">
-          <caret line="26" column="10" selection-start-line="26" selection-start-column="10" selection-end-line="26" selection-end-column="10" />
-          <folding />
-        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/IMAGES/player_one.png">
@@ -1005,186 +936,215 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/nhahv/tank90/gui/BaseContainer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="325">
-          <caret line="13" column="20" selection-start-line="13" selection-start-column="20" selection-end-line="13" selection-end-column="20" />
-          <folding />
-        </state>
+    <entry file="file://$PROJECT_DIR$/src/com/nhahv/tank90/gui/PlayGame.java" />
+    <entry file="file://$PROJECT_DIR$/src/IMAGES/bullet_big.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/nhahv/tank90/maps/Bird.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="377">
-          <caret line="41" column="0" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
-          <folding />
-        </state>
+    <entry file="file://$PROJECT_DIR$/src/IMAGES/bullet_down.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/nhahv/tank90/images/ImageIcons.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="525">
-          <caret line="47" column="37" selection-start-line="47" selection-start-column="37" selection-end-line="47" selection-end-column="37" />
-          <folding>
-            <element signature="e#992#993#0" expanded="false" />
-            <element signature="e#1045#1046#0" expanded="false" />
-            <element signature="e#1087#1088#0" expanded="false" />
-          </folding>
-        </state>
+    <entry file="file://$PROJECT_DIR$/src/IMAGES/bullet_left.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/nhahv/tank90/maps/ImagesMenu.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1900">
-          <caret line="81" column="30" selection-start-line="81" selection-start-column="11" selection-end-line="81" selection-end-column="30" />
-          <folding>
-            <element signature="e#425#426#0" expanded="true" />
-            <element signature="e#448#449#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/nhahv/tank90/gui/GUI.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="302">
-          <caret line="92" column="26" selection-start-line="92" selection-start-column="26" selection-end-line="92" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/nhahv/tank90/gui/MenuGame.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1477">
-          <caret line="122" column="5" selection-start-line="122" selection-start-column="5" selection-end-line="122" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/nhahv/tank90/gui/ContainerPlayGame.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="927">
-          <caret line="44" column="39" selection-start-line="44" selection-start-column="6" selection-end-line="44" selection-end-column="39" />
-          <folding>
-            <element signature="e#1767#1768#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/nhahv/tank90/gui/PlayGame.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-273">
-          <caret line="144" column="36" selection-start-line="144" selection-start-column="36" selection-end-line="144" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/nhahv/tank90/gui/MyContainer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="400">
-          <caret line="20" column="13" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/nhahv/tank90/images/ImagesManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="550">
-          <caret line="39" column="0" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/nhahv/tank90/object/TankBoss.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="125">
-          <caret line="28" column="0" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/nhahv/tank90/maps/Items.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="29" column="35" selection-start-line="29" selection-start-column="35" selection-end-line="29" selection-end-column="35" />
-          <folding>
-            <element signature="e#611#612#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/nhahv/tank90/object/Tank.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="377">
-          <caret line="109" column="67" selection-start-line="109" selection-start-column="67" selection-end-line="109" selection-end-column="67" />
-          <folding>
-            <element signature="e#2670#2671#0" expanded="true" />
-            <element signature="e#2744#2745#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/nhahv/tank90/gui/PlayGameTank.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="232">
-          <caret line="72" column="44" selection-start-line="72" selection-start-column="44" selection-end-line="72" selection-end-column="44" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/nhahv/tank90/maps/ItemsMaps.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1273">
-          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/nhahv/tank90/models/Models.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="227">
-          <caret line="148" column="28" selection-start-line="148" selection-start-column="28" selection-end-line="148" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/nhahv/tank90/maps/MapsManagers.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="13" column="43" selection-start-line="13" selection-start-column="2" selection-end-line="13" selection-end-column="43" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/nhahv/tank90/object/Bullet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="202">
-          <caret line="88" column="27" selection-start-line="88" selection-start-column="27" selection-end-line="88" selection-end-column="27" />
-          <folding>
-            <element signature="e#3766#3767#0" expanded="true" />
-            <element signature="e#3840#3841#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/nhahv/tank90/object/TankPlayer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2827">
-          <caret line="157" column="22" selection-start-line="157" selection-start-column="22" selection-end-line="157" selection-end-column="22" />
-          <folding />
-        </state>
+    <entry file="file://$PROJECT_DIR$/src/com/nhahv/tank90/maps/ItemMaps.java" />
+    <entry file="file://$PROJECT_DIR$/src/IMAGES/items_maps.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/nhahv/tank90/object/CommonSize.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="402">
           <caret line="37" column="5" selection-start-line="37" selection-start-column="5" selection-end-line="37" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/nhahv/tank90/object/TankPlayer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4025">
+          <caret line="168" column="32" selection-start-line="168" selection-start-column="32" selection-end-line="168" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/nhahv/tank90/object/TankBoss.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="402">
+          <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/nhahv/tank90/gui/BaseContainer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="177">
+          <caret line="13" column="20" selection-start-line="13" selection-start-column="20" selection-end-line="13" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/nhahv/tank90/interfaces/ExitGUI.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="125">
+          <caret line="5" column="17" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/nhahv/tank90/interfaces/Interfaces.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="125">
+          <caret line="5" column="17" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/nhahv/tank90/main/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="8" column="44" selection-start-line="8" selection-start-column="44" selection-end-line="8" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/nhahv/tank90/images/ImageIcons.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="850">
+          <caret line="47" column="37" selection-start-line="47" selection-start-column="37" selection-end-line="47" selection-end-column="37" />
           <folding>
-            <element signature="method#CommonSize#0;class#CommonSize#0" expanded="false" />
+            <element signature="e#992#993#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/nhahv/tank90/images/ImagesManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="625">
+          <caret line="31" column="0" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/nhahv/tank90/maps/Bird.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="925">
+          <caret line="47" column="22" selection-start-line="47" selection-start-column="22" selection-end-line="47" selection-end-column="22" />
+          <folding>
+            <element signature="e#1092#1093#0" expanded="false" />
+            <element signature="e#1121#1122#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/nhahv/tank90/maps/ImagesMenu.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1850">
+          <caret line="81" column="30" selection-start-line="81" selection-start-column="11" selection-end-line="81" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/nhahv/tank90/maps/Items.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="250">
+          <caret line="14" column="41" selection-start-line="14" selection-start-column="41" selection-end-line="14" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/nhahv/tank90/maps/ItemsHelp.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="575">
+          <caret line="26" column="10" selection-start-line="26" selection-start-column="10" selection-end-line="26" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/nhahv/tank90/gui/PlayGame.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1675">
+          <caret line="76" column="36" selection-start-line="76" selection-start-column="36" selection-end-line="76" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/nhahv/tank90/object/Tank.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1075">
+          <caret line="63" column="16" selection-start-line="63" selection-start-column="16" selection-end-line="63" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/nhahv/tank90/gui/GUI.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1275">
+          <caret line="59" column="31" selection-start-line="59" selection-start-column="31" selection-end-line="59" selection-end-column="31" />
+          <folding>
+            <element signature="e#2242#2243#0" expanded="true" />
+            <element signature="e#2280#2281#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/nhahv/tank90/gui/MenuGame.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2925">
+          <caret line="126" column="5" selection-start-line="124" selection-start-column="2" selection-end-line="126" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/nhahv/tank90/gui/MyContainer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="575">
+          <caret line="27" column="31" selection-start-line="27" selection-start-column="31" selection-end-line="27" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/nhahv/tank90/gui/ContainerPlayGame.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1375">
+          <caret line="60" column="5" selection-start-line="48" selection-start-column="3" selection-end-line="60" selection-end-column="5" />
+          <folding>
+            <element signature="e#1723#1724#0" expanded="true" />
+            <element signature="e#1755#1756#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/nhahv/tank90/models/Models.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="250">
+          <caret line="10" column="37" selection-start-line="10" selection-start-column="37" selection-end-line="10" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/nhahv/tank90/maps/MapsManagers.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="400">
+          <caret line="49" column="0" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/nhahv/tank90/maps/ItemsMaps.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-672">
+          <caret line="20" column="16" selection-start-line="20" selection-start-column="16" selection-end-line="20" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/nhahv/tank90/object/Bullet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="552">
+          <caret line="86" column="18" selection-start-line="86" selection-start-column="18" selection-end-line="86" selection-end-column="18" />
+          <folding />
         </state>
       </provider>
     </entry>

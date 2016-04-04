@@ -1,5 +1,6 @@
 package com.nhahv.tank90.object;
 
+import com.nhahv.tank90.maps.MapsManagers;
 import com.nhahv.tank90.models.Models;
 
 import java.awt.*;
@@ -15,7 +16,6 @@ public class Tank extends CommonSize {
     private int speedMode;
     private ArrayList<Bullet> mListBullets;
     private int timeFire;
-
 
     public Tank(int x, int y, int size, int type, int orient) {
         super(x, y, size);
@@ -72,9 +72,9 @@ public class Tank extends CommonSize {
         if (isFire()) {
             int x = getX(), y = getY();
             if (getOrient() == Models.UP || getOrient() == Models.DOWN) {
-                x = getX() + Models.SIZE_BULLET + 3;
+                x = getX() + getSize() / 2 - Models.SIZE_BULLET / 2;
             } else if (getOrient() == Models.LEFT || getOrient() == Models.RIGHT) {
-                y = getY() + Models.SIZE_BULLET + 3;
+                y = getY() + getSize() / 2 - Models.SIZE_BULLET / 2;
             }
 
             if (getOrient() == Models.RIGHT) {
@@ -89,15 +89,15 @@ public class Tank extends CommonSize {
         }
     }
 
-    public void moveBullet() {
+    public void moveBullet(MapsManagers mapsManagers) {
         for (int i = mListBullets.size() - 1; i >= 0; i--) {
 
-            mListBullets.get(i).move();
+            mListBullets.get(i).move(mapsManagers);
             if (mListBullets.get(i).getX() >= Models.WIDTH
                     || mListBullets.get(i).getX() <= 0
                     || mListBullets.get(i).getY() <= 0
                     || mListBullets.get(i).getY() >= Models.HEIGHT) {
-                mListBullets.remove(mListBullets.get(i));
+                mListBullets.remove(i);
             }
         }
     }
@@ -109,4 +109,6 @@ public class Tank extends CommonSize {
     public Rectangle getRectangle() {
         return new Rectangle(getX(), getY(), getSize(), getSize());
     }
+
+
 }

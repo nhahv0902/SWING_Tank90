@@ -1,5 +1,6 @@
 package com.nhahv.tank90.maps;
 
+import com.nhahv.tank90.models.Models;
 import com.nhahv.tank90.object.CommonSize;
 
 import java.awt.*;
@@ -20,7 +21,6 @@ public abstract class Items extends CommonSize {
 
     public abstract void draw(Graphics2D graphics2D);
 
-
     public abstract Image getImages();
 
     public int getType() {
@@ -37,5 +37,10 @@ public abstract class Items extends CommonSize {
 
     public void setListImages(ArrayList<Image> mListImages) {
         this.mListImages = mListImages;
+    }
+
+    public Rectangle getRectangle() {
+        return new Rectangle(getX() * Models.SIZE_ITEMS_MAPS,
+                getY() * Models.SIZE_ITEMS_MAPS, getSize(), getSize());
     }
 }

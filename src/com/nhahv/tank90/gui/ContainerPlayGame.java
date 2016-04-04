@@ -10,7 +10,7 @@ import java.awt.*;
  */
 public class ContainerPlayGame extends BaseContainer {
 
-    private PlayGameTank mPlayGameTank;
+    private PlayGame mPlayGame;
 
     @Override
     protected void initContainer() {
@@ -21,17 +21,17 @@ public class ContainerPlayGame extends BaseContainer {
 
     @Override
     protected void initComponents() {
-        mPlayGameTank = new PlayGameTank();
-        mPlayGameTank.setLocation(Models.WIDTH_GUIDE + Models.PADDING_LEFT, Models.PADDING_TOP);
-        mPlayGameTank.setVisible(true);
-        mPlayGameTank.requestFocus();
-        mPlayGameTank.requestFocus(true);
-        mPlayGameTank.requestFocusInWindow();
+        mPlayGame = new PlayGame();
+        mPlayGame.setLocation(Models.WIDTH_GUIDE + Models.PADDING_LEFT, Models.PADDING_TOP);
+        mPlayGame.setVisible(true);
+        mPlayGame.requestFocus();
+        mPlayGame.requestFocus(true);
+        mPlayGame.requestFocusInWindow();
     }
 
     @Override
     protected void addComponents() {
-        this.add(mPlayGameTank);
+        this.add(mPlayGame);
     }
 
     @Override
@@ -60,7 +60,7 @@ public class ContainerPlayGame extends BaseContainer {
         images.draw(graphics2D);
     }
 
-    public PlayGameTank getPlayGame() {
-        return mPlayGameTank;
+    public PlayGame getPlayGame() {
+        return mPlayGame;
     }
 }

@@ -84,36 +84,92 @@ public class Bullet extends CommonSize {
         this.speedBullet = x;
     }
 
-    public void move() {
+    public void move(MapsManagers mapsManagers) {
         switch (orient) {
             case Models.UP:
-                setY(getY() - speedBullet);
+                if (getY() > 0) {
+                    setY(getY() - speedBullet);
+                    isRemoveBullet(mapsManagers);
+
+                    if (isIntersect(mapsManagers)) {
+                        setY(getY() + speedBullet);
+                    }
+
+                }
                 break;
             case Models.DOWN:
-                setY(getY() + speedBullet);
+                if (getY() < Models.HEIGHT) {
+                    setY(getY() + speedBullet);
+                    isRemoveBullet(mapsManagers);
+                    if (isIntersect(mapsManagers)) {
+                        setY(getY() - speedBullet);
+                    }
+
+                }
                 break;
             case Models.LEFT:
-                setX(getX() - speedBullet);
+                if (getX() > 0) {
+                    setX(getX() - speedBullet);
+                    isRemoveBullet(mapsManagers);
+                    if (isIntersect(mapsManagers)) {
+                        setX(getX() + speedBullet);
+                    }
+                }
                 break;
             case Models.RIGHT:
-                setX(getX() + speedBullet);
+                if (getX() < Models.WIDTH) {
+                    setX(getX() + speedBullet);
+                    isRemoveBullet(mapsManagers);
+                    if (isIntersect(mapsManagers)) {
+                        setX(getX() - speedBullet);
+                    }
+                }
                 break;
+        }
+    }
+
+    private void isRemoveBullet(MapsManagers mapsManagers) {
+        if (isKillWall(mapsManagers)) {
+            setX(0);
+            setY(0);
         }
     }
 
     public boolean isIntersect(MapsManagers mapsManagers) {
 
         for (ItemsMaps itemsMaps : mapsManagers.getListMaps()) {
-            if (itemsMaps.getRectangle().intersects(getRectangle())) {
-                if (itemsMaps.getPropertyBulletCross() == Models.MAPS_BREAK) {
-                    itemsMaps.setType(Models.TYPE_ITEMS_1);
-                    return false;
-                } else if (itemsMaps.getPropertyBulletCross() == Models.MAPS_NO_CROSS) {
-                    return true;
-                }
+            if (isIntersectItemMaps(itemsMaps)
+                    && !itemsMaps.isBulletCross()) {
+                return true;
             }
         }
         return false;
+    }
+
+    // check bullet have cross wall
+    public boolean isKillWall(MapsManagers mapsManagers) {
+
+//        int size = mapsManagers.getListMaps().size();
+//        for (int i = size - 1; i >= 0; i--) {
+//            ItemsMaps itemsMaps = mapsManagers.getListMaps().get(i);
+//            if (isIntersectItemMaps(itemsMaps) && itemsMaps.isBulletCross()) {
+//                itemsMaps.setType(Models.TYPE_ITEMS_1);
+//                mapsManagers.getListMaps().remove(i);
+//                return true;
+//            }
+//        }
+        for (ItemsMaps itemsMaps : mapsManagers.getListMaps()) {
+            if (isIntersectItemMaps(itemsMaps) && itemsMaps.isBreadWall()) {
+                itemsMaps.setType(Models.TYPE_ITEMS_1);
+//                mapsManagers.getListMaps().remove(itemsMaps);
+                return true;
+            }
+        }
+        return false;
+    }
+
+    private boolean isIntersectItemMaps(ItemsMaps itemsMaps) {
+        return itemsMaps.getRectangle().intersects(getRectangle());
     }
 
     public Rectangle getRectangle() {

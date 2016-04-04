@@ -16,15 +16,15 @@ public class Bird {
     private int x, y;
     private int size;
     private Image image;
+    private boolean isLive;
 
     public Bird() {
 
         setImages();
-//        x = (Models.WIDTH - Models.SIZE_BOOS) / 2;
         x = (Models.SIZE_MAPS - Models.SIZE_BOOS) / 2;
-//        y = Models.HEIGHT - Models.SIZE_BOOS * 2 + Models.SIZE_ITEMS_MAPS;
         y = Models.SIZE_MAPS - Models.SIZE_BOOS;
         size = Models.SIZE_BOOS;
+        isLive = true;
     }
 
     public void draw(Graphics2D graphics2D) {
@@ -38,6 +38,14 @@ public class Bird {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    public void setLive(boolean isLive) {
+        this.isLive = isLive;
+    }
+
+    public boolean getLive() {
+        return isLive;
     }
 
     public Rectangle getRectangle() {

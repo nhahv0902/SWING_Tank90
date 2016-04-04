@@ -32,10 +32,12 @@ public class Models {
     public static final String ICON_BT_PLAY = "/IMAGES/icons.png";
     public static final String ICON_DOCUMENTS = "/IMAGES/icon_document.png";
     public static final String ICON_MENU = "/IMAGES/icon_guide_menu.png";
+
     public static final String ICON_RUN_UP = "/IMAGES/icons_run_up.png";
     public static final String ICON_RUN_DOWN = "/IMAGES/icons_run_down.png";
     public static final String ICON_RUN_LEFT = "/IMAGES/icons_run_left.png";
     public static final String ICON_RUN_RIGHT = "/IMAGES/icons_run_right.png";
+
     public static final String ICONS_GUIDE_LEFT = "/IMAGES/icon_guide_left.png";
     public static final String ICONS_GUIDE_RIGHT = "/IMAGES/icon_guide_right.png";
     public static final String ITEMS_BIRD = "/IMAGES/icons_bird.png";
@@ -101,8 +103,6 @@ public class Models {
     public static final int SIZE_ITEMS_MAPS = 28;
     public static final int NUMBER_ITEMS_MAPS = 6;
     public static final int NUMBER_COLUMN = 26;
-    public static final int SIZE_ITEMS_HELP = 52;
-    public static final int NUMBER_ITEMS_HELP = 7;
 
     public static final int TYPE_ITEMS_1 = 0;
     public static final int TYPE_ITEMS_2 = 1;
@@ -149,9 +149,11 @@ public class Models {
     public static final int SPEED_BULLET_NORMAL = 1;
     public static final int SPEED_BULLET_MAX = 2;
 
-    public static final int TIME_OUT = 400;
-    public static final int TIME_SLEEP = 8;
+    public static final int TIME_OUT = 800;
+    public static final int TIME_SLEEP = 6;
 
     public static final int SIZE_TANK_PLAYER = 56;
     public static final int SIZE_TANK_RUN = 70;
+
+    public static final int SIZE_ITEMS = 28;
 }

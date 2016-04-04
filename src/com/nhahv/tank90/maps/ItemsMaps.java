@@ -10,29 +10,11 @@ import java.awt.*;
  */
 public class ItemsMaps extends Items {
 
-    private int propertyTankCross; // tank can cross
-    private int propertyBulletCross; // bullet can cross
 
     public ItemsMaps(int x, int y, int size, int type) {
         super(x, y, size, type);
 
         setListImages(ImagesManager.getListMaps());
-
-        if (type == Models.TYPE_ITEMS_1 || type == Models.TYPE_ITEMS_4
-                || type == Models.TYPE_ITEMS_6) {
-            propertyTankCross = Models.MAPS_CROSS;
-        } else {
-            propertyTankCross = Models.MAPS_NO_CROSS;
-        }
-
-        if (type == Models.TYPE_ITEMS_1 || type == Models.TYPE_ITEMS_4
-                || type == Models.TYPE_ITEMS_5 || type == Models.TYPE_ITEMS_6) {
-            propertyBulletCross = Models.MAPS_CROSS;
-        } else if (type == Models.TYPE_ITEMS_3) {
-            propertyBulletCross = Models.MAPS_NO_CROSS;
-        } else if (type == Models.TYPE_ITEMS_2) {
-            propertyBulletCross = Models.MAPS_BREAK;
-        }
     }
 
     @Override
@@ -68,16 +50,18 @@ public class ItemsMaps extends Items {
         return image;
     }
 
-    public Rectangle getRectangle() {
-        return new Rectangle(getX() * Models.SIZE_ITEMS_MAPS,
-                getY() * Models.SIZE_ITEMS_MAPS, getSize(), getSize());
+    public boolean isTankCross() {
+        return (getType() == Models.TYPE_ITEMS_1
+                || getType() == Models.TYPE_ITEMS_4
+                || getType() == Models.TYPE_ITEMS_6);
     }
 
-    public int getPropertyBulletCross() {
-        return propertyBulletCross;
+    public boolean isBulletCross() {
+        return (getType() == Models.TYPE_ITEMS_1
+                || getType() >= Models.TYPE_ITEMS_4);
     }
 
-    public int getPropertyTankCross() {
-        return propertyTankCross;
+    public boolean isBreadWall() {
+        return getType() == Models.TYPE_ITEMS_2;
     }
 }

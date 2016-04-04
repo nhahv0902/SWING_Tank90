@@ -3,7 +3,6 @@ package com.nhahv.tank90.object;
 import com.nhahv.tank90.images.ImageIcons;
 import com.nhahv.tank90.images.ImagesManager;
 import com.nhahv.tank90.maps.Bird;
-import com.nhahv.tank90.maps.ItemsMaps;
 import com.nhahv.tank90.maps.MapsManagers;
 import com.nhahv.tank90.models.Models;
 
@@ -185,16 +184,16 @@ public class TankPlayer extends Tank {
 
     private boolean isIntersect(MapsManagers mapsManagers, Bird bird) {
 
-        for (ItemsMaps itemsMaps : mapsManagers.getListMaps()) {
-            if (itemsMaps.getRectangle().intersects(getRectangle())
-                    && itemsMaps.getPropertyTankCross() != Models.MAPS_CROSS) {
-                return true;
-            }
-        }
-
-        if (bird.getRectangle().intersects(this.getRectangle())) {
-            return true;
-        }
+//        for (ItemsMaps itemsMaps : mapsManagers.getListMaps()) {
+//            if (itemsMaps.getRectangle().intersects(getRectangle())
+//                    && !itemsMaps.isTankCross()) {
+//                return true;
+//            }
+//        }
+//
+//        if (bird.getRectangle().intersects(this.getRectangle())) {
+//            return true;
+//        }
         return false;
     }
 }

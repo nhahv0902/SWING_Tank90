@@ -65,7 +65,6 @@ public class MyContainer extends BaseContainer {
         }
     }
 
-
     public void setExitGUI(ExitGUI interfaces) {
         this.mExitGUI = interfaces;
     }

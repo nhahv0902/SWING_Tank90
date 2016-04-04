@@ -14,7 +14,7 @@ import java.util.BitSet;
 /**
  * Created by Nhahv on 4/2/2016.
  */
-public class PlayGameTank extends BaseContainer {
+public class PlayGame extends BaseContainer {
 
     private int mLevel_1 = 1;
     private MapsManagers mMapsManagers;
@@ -27,6 +27,7 @@ public class PlayGameTank extends BaseContainer {
     private Thread mThreadPlayerOne;
 
     private TankBoss mBoss;
+//    private Graphics2D mGraphics2D;
 
 
     @Override
@@ -72,9 +73,8 @@ public class PlayGameTank extends BaseContainer {
                 while (true) {
                     Thread.sleep(Models.TIME_SLEEP);
                     moveTankPlayer();
-                    mPlayerOne.moveBullet();
+                    mPlayerOne.moveBullet(mMapsManagers);
                     mPlayerOne.moveTimeFire();
-
 //                    mBoss.moveBullet();
 //                    mBoss.moveTimeFire();
                     repaint();
@@ -93,14 +93,15 @@ public class PlayGameTank extends BaseContainer {
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
 
-        Graphics2D graphics2D = (Graphics2D) g;
-        graphics2D.setRenderingHint(RenderingHints.KEY_ALPHA_INTERPOLATION, RenderingHints.VALUE_ALPHA_INTERPOLATION_SPEED);
-        graphics2D.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
-        graphics2D.setRenderingHint(RenderingHints.KEY_INTERPOLATION, RenderingHints.VALUE_INTERPOLATION_BICUBIC);
-        drawMaps(graphics2D);
-        drawBird(graphics2D);
-        mPlayerOne.draw(graphics2D);
-        mBoss.draw(graphics2D);
+        Graphics2D mGraphics2D = (Graphics2D) g;
+        mGraphics2D.setRenderingHint(RenderingHints.KEY_ALPHA_INTERPOLATION, RenderingHints.VALUE_ALPHA_INTERPOLATION_SPEED);
+        mGraphics2D.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
+        mGraphics2D.setRenderingHint(RenderingHints.KEY_INTERPOLATION, RenderingHints.VALUE_INTERPOLATION_BICUBIC);
+        drawMaps(mGraphics2D);
+        drawBird(mGraphics2D);
+        mPlayerOne.draw(mGraphics2D);
+        mBoss.draw(mGraphics2D);
+
     }
 
 
@@ -143,7 +144,6 @@ public class PlayGameTank extends BaseContainer {
             this.requestFocus();
             this.requestFocus(true);
             this.requestFocusInWindow();
-
         }
     }
 }
