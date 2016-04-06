@@ -13,7 +13,6 @@ public class MyContainer extends BaseContainer {
 
     private MenuGame mMenuGame;
     private CardLayout mCardLayout;
-
     private ContainerPlayGame mPlayGame;
     private ExitGUI mExitGUI;
     private Interfaces mInterface;
@@ -54,7 +53,6 @@ public class MyContainer extends BaseContainer {
 
     @Override
     protected void addEvents() {
-
     }
 
     @Override

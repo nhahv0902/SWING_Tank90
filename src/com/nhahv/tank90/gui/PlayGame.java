@@ -3,9 +3,10 @@ package com.nhahv.tank90.gui;
 import com.nhahv.tank90.maps.Bird;
 import com.nhahv.tank90.maps.MapsManagers;
 import com.nhahv.tank90.models.Models;
-import com.nhahv.tank90.object.TankBoss;
+import com.nhahv.tank90.object.ManagerTankBoss;
 import com.nhahv.tank90.object.TankPlayer;
 
+import javax.swing.*;
 import java.awt.*;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
@@ -16,18 +17,18 @@ import java.util.BitSet;
  */
 public class PlayGame extends BaseContainer {
 
-    private int mLevel_1 = 1;
+    private static int mLevel_1 = 1;
     private MapsManagers mMapsManagers;
     private Bird mBird;
 
     private TankPlayer mPlayerOne;
     private KeyAdapter mKeyAdapter;
-    private BitSet mKeyValue;
+    private BitSet mKeyValue = new BitSet(256);
     private Runnable mRunnable;
     private Thread mThreadPlayerOne;
 
-    private TankBoss mBoss;
-//    private Graphics2D mGraphics2D;
+    private Graphics2D mGraphics2D;
+    private ManagerTankBoss mTankBoss;
 
 
     @Override
@@ -40,14 +41,22 @@ public class PlayGame extends BaseContainer {
 
     @Override
     protected void initComponents() {
-        mPlayerOne = new TankPlayer(0, 0, 0, 0, 0);
-        mBoss = new TankBoss(0, 0, 0, 0, 1);
-        mKeyValue = new BitSet(256);
+        mTankBoss = new ManagerTankBoss(24, 4);
     }
 
     @Override
     protected void addComponents() {
+        initObject();
+    }
 
+    private void initObject() {
+        if (mKeyValue != null)
+            mKeyValue.clear();
+        mPlayerOne = new TankPlayer(0, 0, 0, 0, 0);
+//        mKeyValue = new BitSet(256);
+        mBird = new Bird();
+        mMapsManagers = new MapsManagers(mLevel_1);
+        System.out.println(mMapsManagers.getListMaps().size() + "");
     }
 
     @Override
@@ -71,12 +80,19 @@ public class PlayGame extends BaseContainer {
         mRunnable = () -> {
             try {
                 while (true) {
+
                     Thread.sleep(Models.TIME_SLEEP);
                     moveTankPlayer();
-                    mPlayerOne.moveBullet(mMapsManagers);
+                    mPlayerOne.moveBullet(mMapsManagers, mBird, mPlayerOne, mTankBoss);
                     mPlayerOne.moveTimeFire();
+                    mTankBoss.moveTankBoss(mMapsManagers, mBird);
 //                    mBoss.moveBullet();
 //                    mBoss.moveTimeFire();
+                    if (mBird != null && !mBird.getLive()) {
+                        JOptionPane.showConfirmDialog(PlayGame.this, "message");
+                        mThreadPlayerOne.stop();
+                    }
+
                     repaint();
                 }
             } catch (InterruptedException e) {
@@ -93,25 +109,23 @@ public class PlayGame extends BaseContainer {
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
 
-        Graphics2D mGraphics2D = (Graphics2D) g;
+        mGraphics2D = (Graphics2D) g;
         mGraphics2D.setRenderingHint(RenderingHints.KEY_ALPHA_INTERPOLATION, RenderingHints.VALUE_ALPHA_INTERPOLATION_SPEED);
         mGraphics2D.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
         mGraphics2D.setRenderingHint(RenderingHints.KEY_INTERPOLATION, RenderingHints.VALUE_INTERPOLATION_BICUBIC);
         drawMaps(mGraphics2D);
         drawBird(mGraphics2D);
         mPlayerOne.draw(mGraphics2D);
-        mBoss.draw(mGraphics2D);
+//        mBoss.draw(mGraphics2D);
+        mTankBoss.draw(mGraphics2D);
 
     }
 
-
     private void drawMaps(Graphics2D graphics2D) {
-        mMapsManagers = new MapsManagers(mLevel_1);
         mMapsManagers.drawMaps(graphics2D);
     }
 
     private void drawBird(Graphics2D graphics2D) {
-        mBird = new Bird();
         mBird.draw(graphics2D);
     }
 

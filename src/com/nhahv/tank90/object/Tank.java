@@ -1,5 +1,7 @@
 package com.nhahv.tank90.object;
 
+import com.nhahv.tank90.maps.Bird;
+import com.nhahv.tank90.maps.ItemsMaps;
 import com.nhahv.tank90.maps.MapsManagers;
 import com.nhahv.tank90.models.Models;
 
@@ -9,13 +11,15 @@ import java.util.ArrayList;
 /**
  * Created by Nhahv on 3/30/2016.
  */
-public class Tank extends CommonSize {
+public abstract class Tank extends CommonSize {
 
     private int type;
     private int orient;
     private int speedMode;
     private ArrayList<Bullet> mListBullets;
     private int timeFire;
+    private Image image;
+    private boolean isTankPlay;
 
     public Tank(int x, int y, int size, int type, int orient) {
         super(x, y, size);
@@ -26,6 +30,8 @@ public class Tank extends CommonSize {
         this.orient = orient;
         this.timeFire = 0;
         this.mListBullets = new ArrayList<>();
+        this.isTankPlay = false;
+
     }
 
     public int getType() {
@@ -84,15 +90,16 @@ public class Tank extends CommonSize {
                 y += getSize();
             }
             Bullet bullet = new Bullet(x, y, Models.SIZE_BULLET, getOrient(), Models.TYPE_BULLET_NORMAL);
+            bullet.setTankPlay(isTankPlay());
             mListBullets.add(bullet);
             setTimeFire();
         }
     }
 
-    public void moveBullet(MapsManagers mapsManagers) {
+    public void moveBullet(MapsManagers mapsManagers, Bird bird, TankPlayer tankPlayer, ManagerTankBoss managerTankBoss) {
         for (int i = mListBullets.size() - 1; i >= 0; i--) {
 
-            mListBullets.get(i).move(mapsManagers);
+            mListBullets.get(i).move(mapsManagers, bird, tankPlayer, managerTankBoss);
             if (mListBullets.get(i).getX() >= Models.WIDTH
                     || mListBullets.get(i).getX() <= 0
                     || mListBullets.get(i).getY() <= 0
@@ -110,5 +117,45 @@ public class Tank extends CommonSize {
         return new Rectangle(getX(), getY(), getSize(), getSize());
     }
 
+    protected boolean isIntersect(MapsManagers mapsManagers, Bird bird) {
 
+        for (ItemsMaps itemsMaps : mapsManagers.getListMaps()) {
+//            Rectangle rectangle = new Rectangle();
+//            Rectangle2D.intersect(itemsMaps.getRectangle(), getRectangle(), rectangle);
+            Rectangle rectangle = new Rectangle(getX() + 3, getY() + 3, getSize() - 8, getSize() - 8);
+            if (itemsMaps.getRectangle().intersects(rectangle)
+                    && !itemsMaps.isTankCross()) {
+                return true;
+            }
+//            if (rectangle.getHeight() > 10 && rectangle.getWidth() >= 10)
+//                System.out.println(rectangle.getWidth() + " " + rectangle.getHeight() + "");
+//            if (rectangle.getWidth() >= 20 || rectangle.getHeight() >= 20
+//                    && !itemsMaps.isTankCross()) {
+//                return true;
+//            }
+        }
+        if (bird.getRectangle().intersects(this.getRectangle())) {
+            return true;
+        }
+        return false;
+    }
+
+    public Image getImage() {
+        return image;
+    }
+
+    public void setImage(Image image) {
+        this.image = image;
+    }
+
+    public boolean isTankPlay() {
+        return isTankPlay;
+    }
+
+    public void setTankPlay(boolean tankPlay) {
+        isTankPlay = tankPlay;
+    }
+
+
+    public abstract void remove();
 }

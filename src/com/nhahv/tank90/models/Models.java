@@ -59,7 +59,7 @@ public class Models {
     public static final String BULLET_NORMAL_DOWN = "/IMAGES/bullet_down.png";
     public static final String BULLET_NORMAL_LEFT = "/IMAGES/bullet_left.png";
     public static final String BULLET_NORMAL_RIGHT = "/IMAGES/bullet_right.png";
-    public static final String BULLET_NORMAL_BIG = "/IMAGES/bullet_big.png";
+    public static final String BULLET_BIG = "/IMAGES/bullet_big.png";
 
     public static final String PLAY_TWO_UP = "/IMAGES/player_two_up.png";
     public static final String PLAY_TWO_DOWN = "/IMAGES/player_two_down.png";
@@ -71,16 +71,9 @@ public class Models {
     public static final String PLAY_ONE_LEFT = "/IMAGES/player_one_left.png";
     public static final String PLAY_ONE_RIGHT = "/IMAGES/player_one_right.png";
 
-    public static final String PLAY_TWO_UP_BIG = "/IMAGES/player_two_up_big.png";
-    public static final String PLAY_TWO_DOWN_BIG = "/IMAGES/player_two_down_big.png";
-    public static final String PLAY_TWO_LEFT_BIG = "/IMAGES/player_two_left_big.png";
-    public static final String PLAY_TWO_RIGHT_BIG = "/IMAGES/player_two_right_big.png";
 
-    public static final String PLAY_ONE_UP_BIG = "/IMAGES/player_one_up_big.png";
-    public static final String PLAY_ONE_DOWN_BIG = "/IMAGES/player_one_down_big.png";
-    public static final String PLAY_ONE_LEFT_BIG = "/IMAGES/player_one_left_big.png";
-    public static final String PLAY_ONE_RIGHT_BIG = "/IMAGES/player_one_right_big.png";
     public static final String PLAY_ONE_ONE = "/IMAGES/player_one.png";
+    public static final String PLAY_ONE_TWO = "/IMAGES/player_two.png";
 
     public static final int PADDING_TANK = 6;
 
@@ -126,7 +119,8 @@ public class Models {
     public static final int TYPE_HELP_7 = 6;
 
 
-    public static final int SIZE_BULLET = 16;
+    //    public static final int SIZE_BULLET = 16;
+    public static final int SIZE_BULLET = 14;
     public static final int NUMBER_BULLET = 4;
     public static final int TYPE_BULLET_NORMAL = 0;
     public static final int TYPE_BULLET_BIG = 1;
@@ -156,4 +150,10 @@ public class Models {
     public static final int SIZE_TANK_RUN = 70;
 
     public static final int SIZE_ITEMS = 28;
+
+    public static final int PLAYER_11 = 0;
+    public static final int PLAYER_12 = 1;
+    public static final int PLAYER_21 = 2;
+    public static final int PLAYER_22 = 3;
+    public static final String BOMB_BIRD = "/IMAGES/bomb_bird.png";
 }

@@ -3,7 +3,10 @@ package com.nhahv.tank90.maps;
 import com.nhahv.tank90.models.Models;
 import com.nhahv.tank90.object.CommonSize;
 
+import javax.imageio.ImageIO;
 import java.awt.*;
+import java.awt.image.BufferedImage;
+import java.io.IOException;
 import java.util.ArrayList;
 
 /**
@@ -42,5 +45,20 @@ public abstract class Items extends CommonSize {
     public Rectangle getRectangle() {
         return new Rectangle(getX() * Models.SIZE_ITEMS_MAPS,
                 getY() * Models.SIZE_ITEMS_MAPS, getSize(), getSize());
+    }
+
+    public ArrayList<Image> getImage(String imgName, int width, int height, int number) {
+        ArrayList<Image> listImages = new ArrayList<>();
+        try {
+            BufferedImage buffReadImage = ImageIO.read(getClass().getResourceAsStream(imgName));
+            BufferedImage buffCutImage;
+            for (int i = 0; i < number; i++) {
+                buffCutImage = buffReadImage.getSubimage(0, i * height, width, height);
+                listImages.add(buffCutImage);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return listImages;
     }
 }

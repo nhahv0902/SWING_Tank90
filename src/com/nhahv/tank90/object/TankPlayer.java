@@ -1,12 +1,15 @@
 package com.nhahv.tank90.object;
 
 import com.nhahv.tank90.images.ImageIcons;
-import com.nhahv.tank90.images.ImagesManager;
 import com.nhahv.tank90.maps.Bird;
 import com.nhahv.tank90.maps.MapsManagers;
 import com.nhahv.tank90.models.Models;
 
+import javax.imageio.ImageIO;
 import java.awt.*;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 
 /**
@@ -18,6 +21,7 @@ public class TankPlayer extends Tank {
     private ArrayList<Image> mListTankTwo;
     private ArrayList<Image> mListTankOneBig;
     private ArrayList<Image> mListTankTwoBig;
+    private ArrayList<Image> mListTank;
 
     //    private int speedMode;
     private int life;
@@ -26,10 +30,16 @@ public class TankPlayer extends Tank {
         super(x, y, size, type, orient);
 
         type = Models.TYPE_PLAYER_1;
+        setTankPlay(true);
         setY(Models.SIZE_MAPS - Models.SIZE_TANK_PLAYER);
 
+        mListTank = new ArrayList<>();
         setListTankOne();
         setListTankTwo();
+
+        mListTankOneBig = setListImages(Models.PLAY_ONE_ONE);
+        mListTankTwoBig = setListImages(Models.PLAY_ONE_TWO);
+        setListImagesShow();
 
         if (type == Models.TYPE_PLAYER_1) {
             setX(Models.START_PLAYER_ONE);
@@ -38,30 +48,26 @@ public class TankPlayer extends Tank {
         }
     }
 
-
     private void setListTankOne() {
-//        mListTankOne = new ArrayList<>();
-//        Image image = new ImageIcons(Models.PLAY_ONE_UP).getImage();
-//
-//        mListTankOne.add(image);
-//        image = new ImageIcons(Models.PLAY_ONE_DOWN).getImage();
-//        mListTankOne.add(image);
-//
-//        image = new ImageIcons(Models.PLAY_ONE_LEFT).getImage();
-//        mListTankOne.add(image);
-//
-//        image = new ImageIcons(Models.PLAY_ONE_RIGHT).getImage();
-//        mListTankOne.add(image);
         mListTankOne = new ArrayList<>();
-        mListTankOne = ImagesManager.getListPlayer_1();
-    }
+        Image image = new ImageIcons(Models.PLAY_ONE_UP).getImage();
+        mListTankOne.add(image);
 
+        image = new ImageIcons(Models.PLAY_ONE_DOWN).getImage();
+        mListTankOne.add(image);
+
+        image = new ImageIcons(Models.PLAY_ONE_LEFT).getImage();
+        mListTankOne.add(image);
+
+        image = new ImageIcons(Models.PLAY_ONE_RIGHT).getImage();
+        mListTankOne.add(image);
+    }
 
     private void setListTankTwo() {
         mListTankTwo = new ArrayList<>();
         Image image = new ImageIcons(Models.PLAY_TWO_UP).getImage();
-
         mListTankTwo.add(image);
+
         image = new ImageIcons(Models.PLAY_TWO_DOWN).getImage();
         mListTankTwo.add(image);
 
@@ -72,73 +78,27 @@ public class TankPlayer extends Tank {
         mListTankTwo.add(image);
     }
 
-    private void setListTankOneBig() {
-        mListTankOneBig = new ArrayList<>();
-        Image image = new ImageIcons(Models.PLAY_ONE_UP_BIG).getImage();
-
-        mListTankOneBig.add(image);
-        image = new ImageIcons(Models.PLAY_ONE_DOWN_BIG).getImage();
-        mListTankOneBig.add(image);
-
-        image = new ImageIcons(Models.PLAY_ONE_LEFT_BIG).getImage();
-        mListTankOneBig.add(image);
-
-        image = new ImageIcons(Models.PLAY_ONE_RIGHT_BIG).getImage();
-        mListTankOneBig.add(image);
-    }
-
-    private void setListTankTwoBig() {
-        mListTankTwoBig = new ArrayList<>();
-        Image image = new ImageIcons(Models.PLAY_TWO_UP_BIG).getImage();
-
-        mListTankTwoBig.add(image);
-        image = new ImageIcons(Models.PLAY_TWO_DOWN_BIG).getImage();
-        mListTankTwoBig.add(image);
-
-        image = new ImageIcons(Models.PLAY_TWO_LEFT_BIG).getImage();
-        mListTankTwoBig.add(image);
-
-        image = new ImageIcons(Models.PLAY_TWO_RIGHT_BIG).getImage();
-        mListTankTwoBig.add(image);
-    }
-
     public void draw(Graphics2D graphics2D) {
 
-        setListTankOne();
-        Image image = mListTankOne.get(Models.UP);
-        if (getType() == Models.TYPE_PLAYER_1) {
-            switch (getOrient()) {
-                case Models.UP:
-                    image = mListTankOne.get(Models.UP);
-                    break;
-                case Models.DOWN:
-                    image = mListTankOne.get(Models.DOWN);
-                    break;
-                case Models.LEFT:
-                    image = mListTankOne.get(Models.LEFT);
-                    break;
-                case Models.RIGHT:
-                    image = mListTankOne.get(Models.RIGHT);
-                    break;
-            }
-        } else if (getType() == Models.TYPE_PLAYER_2) {
-            switch (getOrient()) {
-                case Models.UP:
-                    image = mListTankTwo.get(Models.UP);
-                    break;
-                case Models.DOWN:
-                    image = mListTankTwo.get(Models.DOWN);
-                    break;
-                case Models.LEFT:
-                    image = mListTankTwo.get(Models.LEFT);
-                    break;
-                case Models.RIGHT:
-                    image = mListTankTwo.get(Models.RIGHT);
-                    break;
-            }
+        setListImagesShow();
+        Image image = mListTank.get(Models.UP);
+        switch (getOrient()) {
+            case Models.UP:
+                image = mListTank.get(Models.UP);
+                break;
+            case Models.DOWN:
+                image = mListTank.get(Models.DOWN);
+                break;
+            case Models.LEFT:
+                image = mListTank.get(Models.LEFT);
+                break;
+            case Models.RIGHT:
+                image = mListTank.get(Models.RIGHT);
+                break;
         }
 
-        graphics2D.drawImage(image, getX(), getY(), getSize(), getSize(), null);
+        setImage(image);
+        graphics2D.drawImage(getImage(), getX(), getY(), getSize(), getSize(), null);
         for (Bullet bullet : getListBullets()) {
             bullet.draw(graphics2D);
         }
@@ -182,18 +142,46 @@ public class TankPlayer extends Tank {
         }
     }
 
-    private boolean isIntersect(MapsManagers mapsManagers, Bird bird) {
+    private void setListImagesShow() {
+        setType(Models.PLAYER_12);
+        switch (getType()) {
+            case Models.PLAYER_11:
+                mListTank = mListTankOne;
+                break;
+            case Models.PLAYER_12:
+                mListTank = mListTankOneBig;
+                break;
+            case Models.PLAYER_21:
+                mListTank = mListTankTwo;
+                break;
+            case Models.PLAYER_22:
+                mListTank = mListTankTwoBig;
+                break;
+        }
+    }
 
-//        for (ItemsMaps itemsMaps : mapsManagers.getListMaps()) {
-//            if (itemsMaps.getRectangle().intersects(getRectangle())
-//                    && !itemsMaps.isTankCross()) {
-//                return true;
-//            }
-//        }
-//
-//        if (bird.getRectangle().intersects(this.getRectangle())) {
-//            return true;
-//        }
-        return false;
+    private ArrayList<Image> setListImages(String name) {
+        ArrayList<Image> listImages = new ArrayList<>();
+        try {
+            BufferedImage buffReadImage = ImageIO.read(new File("src" + name));
+            BufferedImage buffCutImage;
+            for (int i = 0; i < Models.NUMBER_BOOS; i++) {
+                buffCutImage = buffReadImage.getSubimage(0, i * getSize(), getSize(), getSize());
+                listImages.add(buffCutImage);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return listImages;
+    }
+
+    @Override
+    public void remove() {
+        setY(Models.SIZE_MAPS - Models.SIZE_TANK_PLAYER);
+        if (getType() == Models.TYPE_PLAYER_1) {
+            setX(Models.START_PLAYER_ONE);
+        } else {
+            setX(Models.START_PLAYER_TWO);
+        }
     }
 }

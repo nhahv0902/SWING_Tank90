@@ -25,7 +25,7 @@ public class MapsManagers {
             FileInputStream input = new FileInputStream(file);
             BufferedReader buff = new BufferedReader(new InputStreamReader(input));
 
-            String content = "";
+            String content;
             int row = 0, type;
 
             while ((content = buff.readLine()) != null) {
@@ -52,4 +52,20 @@ public class MapsManagers {
             itemsMaps.draw(graphics2D);
         }
     }
+
+    public int size() {
+        return mListMaps.size();
+    }
+
+    public ItemsMaps getItems(int i) {
+        return mListMaps.get(i);
+    }
+//    public void changeType(int orient, int x) {
+//        mListMaps.get(x).setType(Models.TYPE_ITEMS_1);
+//        if (orient == Models.UP || orient == Models.DOWN) {
+//            mListMaps.get(x + 1).setType(Models.TYPE_ITEMS_1);
+//        } else if (orient == Models.LEFT || orient == Models.RIGHT) {
+//            mListMaps.get(x + 26).setType(Models.TYPE_ITEMS_1);
+//        }
+//    }
 }

@@ -32,14 +32,17 @@ public class MenuGame extends BaseContainer {
     @Override
     public void initComponents() {
 
+        // draw tank run
         mTankRun = new ImagesMenu(0, 0, Models.ICON_RUN_DOWN);
         mTankRun.setPaddingX(0);
 
         mPlayOne = new ImagesMenu(0, 400, Models.ICONS_PLAY_ONE);
+        // draw label play one and draw play two
         mPlayOne.setPaddingX(550);
         mPlayTwo = new ImagesMenu(0, 400 + 40, Models.ICONS_PLAY_TWO);
         mPlayTwo.setPaddingX(550);
 
+        // draw icon chose play one and play two
         mIconPlayOne = new ImagesMenu(0, 400, Models.ICON_BT_PLAY);
         mIconPlayOne.setPaddingX(500);
     }

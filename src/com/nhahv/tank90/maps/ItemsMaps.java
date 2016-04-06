@@ -1,6 +1,5 @@
 package com.nhahv.tank90.maps;
 
-import com.nhahv.tank90.images.ImagesManager;
 import com.nhahv.tank90.models.Models;
 
 import java.awt.*;
@@ -14,7 +13,7 @@ public class ItemsMaps extends Items {
     public ItemsMaps(int x, int y, int size, int type) {
         super(x, y, size, type);
 
-        setListImages(ImagesManager.getListMaps());
+        setListImages(getImage(Models.ITEMS_MAPS, size, size, Models.NUMBER_ITEMS_MAPS));
     }
 
     @Override
@@ -64,4 +63,6 @@ public class ItemsMaps extends Items {
     public boolean isBreadWall() {
         return getType() == Models.TYPE_ITEMS_2;
     }
+
+
 }

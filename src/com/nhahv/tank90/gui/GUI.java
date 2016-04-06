@@ -18,7 +18,6 @@ public class GUI extends JFrame {
     private MyContainer mMyContainer;
 
     public GUI() throws HeadlessException {
-
         initGUI();
         initComponents();
         addComponents();

@@ -1,6 +1,7 @@
 package com.nhahv.tank90.maps;
 
 
+import com.nhahv.tank90.images.ImageIcons;
 import com.nhahv.tank90.models.Models;
 
 import javax.imageio.ImageIO;
@@ -42,6 +43,9 @@ public class Bird {
 
     public void setLive(boolean isLive) {
         this.isLive = isLive;
+        if (!isLive) {
+            image = new ImageIcons(Models.BOMB_BIRD).getImage();
+        }
     }
 
     public boolean getLive() {
