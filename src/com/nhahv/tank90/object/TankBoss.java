@@ -42,18 +42,6 @@ public class TankBoss extends Tank {
 
     @Override
     public void remove() {
-//        new Thread() {
-//            @Override
-//            public void run() {
-//                super.run();
-//                try {
-//                    setImage(new ImageIcons("/IMAGES/bomb_wall.png").getImage());
-//                    Thread.sleep(1000);
-//                } catch (InterruptedException e) {
-//                    e.printStackTrace();
-//                }
-//            }
-//        }.start();
         setX(-100);
         setY(-100);
     }
@@ -193,5 +181,4 @@ public class TankBoss extends Tank {
         setOrient(random);
         setImage(getListTank().get(random));
     }
-
 }

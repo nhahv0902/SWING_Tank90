@@ -78,8 +78,11 @@ public class PlayGame extends BaseContainer {
             try {
                 while (true) {
 
+                    if (mBird != null && !mBird.getLive()) {
+                        JOptionPane.showConfirmDialog(PlayGame.this, "message");
+                        mThreadPlayerOne.stop();
+                    }
                     Thread.sleep(Models.TIME_SLEEP);
-
                     moveTankPlayer();
                     mPlayerOne.moveBullet(mMapsManagers, mBird, mPlayerOne, mTankBoss);
                     mPlayerOne.moveTimeFire();
@@ -88,10 +91,7 @@ public class PlayGame extends BaseContainer {
                     mTankBoss.moveBullet(mMapsManagers, mBird, mPlayerOne, mTankBoss);
                     mTankBoss.moveTime();
 
-                    if (mBird != null && !mBird.getLive()) {
-                        JOptionPane.showConfirmDialog(PlayGame.this, "message");
-                        mThreadPlayerOne.stop();
-                    }
+
                     repaint();
                 }
             } catch (InterruptedException e) {

@@ -78,7 +78,7 @@ public class Bullet extends CommonSize {
                 case Models.UP:
                     if (getY() > 0) {
                         setY(getY() - speedBullet);
-                        isKillTank(tankPlayer, managerTankBoss);
+
                         removeBullets(mapsManagers);
                         if (isIntersect(mapsManagers)) {
                             setY(getY() + speedBullet);
@@ -87,7 +87,7 @@ public class Bullet extends CommonSize {
                     break;
                 case Models.DOWN:
                     if (getY() < Models.HEIGHT) {
-                        isKillTank(tankPlayer, managerTankBoss);
+//                        isKillTank(tankPlayer, managerTankBoss);
                         setY(getY() + speedBullet);
                         removeBullets(mapsManagers);
                         if (isIntersect(mapsManagers)) {
@@ -98,7 +98,7 @@ public class Bullet extends CommonSize {
                 case Models.LEFT:
                     if (getX() > 0) {
                         setX(getX() - speedBullet);
-                        isKillTank(tankPlayer, managerTankBoss);
+//                        isKillTank(tankPlayer, managerTankBoss);
                         removeBullets(mapsManagers);
                         if (isIntersect(mapsManagers)) {
                             setX(getX() + speedBullet);
@@ -108,7 +108,7 @@ public class Bullet extends CommonSize {
                 case Models.RIGHT:
                     if (getX() < Models.WIDTH) {
                         setX(getX() + speedBullet);
-                        isKillTank(tankPlayer, managerTankBoss);
+//                        isKillTank(tankPlayer, managerTankBoss);
                         removeBullets(mapsManagers);
                         if (isIntersect(mapsManagers)) {
                             setX(getX() - speedBullet);
@@ -117,6 +117,8 @@ public class Bullet extends CommonSize {
                     break;
             }
             isKillBird(bird);
+            isKillBullet(managerTankBoss, tankPlayer);
+            isKillTank(tankPlayer, managerTankBoss);
             System.out.println(bird.getLive() + "");
         }
 
@@ -134,17 +136,12 @@ public class Bullet extends CommonSize {
         setY(0);
     }
 
-    private void removeBullets() {
-        setX(0);
-        setY(0);
-    }
-
     public boolean isIntersect(MapsManagers mapsManagers) {
 
         for (ItemsMaps itemsMaps : mapsManagers.getListMaps()) {
             if (isIntersectItemMaps(itemsMaps)
                     && !itemsMaps.isBulletCross()) {
-                removeBullets();
+                removeBullet();
                 return true;
             }
         }
@@ -181,6 +178,32 @@ public class Bullet extends CommonSize {
         return false;
     }
 
+    // check bullet have destructively
+    public boolean isKillBullet(ManagerTankBoss managerTankBoss, TankPlayer tankPlayer) {
+        if (isTankPlay) {
+            // if is bullet tank play  then check with bullet tank boss
+            for (TankBoss tankBoss : managerTankBoss.getListBoss()) {
+                for (Bullet bullet : tankBoss.getListBullets()) {
+                    if (getRectangle().intersects(bullet.getRectangle())) {
+                        bullet.removeBullet();
+                        removeBullet();
+                        return true;
+                    }
+                }
+            }
+        } else {
+            for (Bullet bullet : tankPlayer.getListBullets()) {
+                if (bullet.getRectangle().intersects(getRectangle())) {
+                    bullet.removeBullet();
+                    removeBullet();
+                    return true;
+                }
+            }
+        }
+
+        return false;
+    }
+
     public boolean isKillTank(TankPlayer tankPlayer, ManagerTankBoss managerTankBoss) {
 
         if (!isTankPlay) {
@@ -190,11 +213,12 @@ public class Bullet extends CommonSize {
                 return true;
             }
         } else if (isTankPlay) {
-            int size = managerTankBoss.getmListBoss().size();
+            int size = managerTankBoss.getListBoss().size();
             for (int i = size - 1; i >= 0; i--) {
-                TankBoss tankBoss = managerTankBoss.getmListBoss().get(i);
+                TankBoss tankBoss = managerTankBoss.getListBoss().get(i);
                 if (tankBoss.getRectangle().intersects(getRectangle())) {
-                    managerTankBoss.getmListBoss().remove(i);
+                    managerTankBoss.getListBoss().remove(i);
+                    removeBullet();
                     return true;
                 }
             }

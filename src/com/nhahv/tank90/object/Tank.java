@@ -124,7 +124,7 @@ public abstract class Tank extends CommonSize {
     }
 
     public boolean checkCrossTankBoss(ManagerTankBoss managerTankBoss) {
-        for (TankBoss tankBoss : managerTankBoss.getmListBoss()) {
+        for (TankBoss tankBoss : managerTankBoss.getListBoss()) {
             if (tankBoss.getRectangle().intersects(getRectangle())) {
                 return true;
             }

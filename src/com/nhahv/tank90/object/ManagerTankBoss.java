@@ -24,7 +24,7 @@ public class ManagerTankBoss {
         initTankBoss();
     }
 
-    public ArrayList<TankBoss> getmListBoss() {
+    public ArrayList<TankBoss> getListBoss() {
         return mListBoss;
     }
 
@@ -38,7 +38,7 @@ public class ManagerTankBoss {
 
         TankBoss tankBoss;
         Random random = new Random();
-        for (int i = 0; i < numberBoss; i++) {
+        for (int i = 0; i < numberBoss && mListBoss.size() <= numberShow; i++) {
             tankBoss = new TankBoss(0, 0, 0, 0, random.nextInt(3));
             mListBoss.add(tankBoss);
         }
