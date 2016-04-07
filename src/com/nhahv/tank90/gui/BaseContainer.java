@@ -7,7 +7,7 @@ import javax.swing.*;
  */
 public abstract class BaseContainer extends JPanel {
 
-    public BaseContainer() {
+    protected BaseContainer() {
         initContainer();
         initComponents();
         addComponents();

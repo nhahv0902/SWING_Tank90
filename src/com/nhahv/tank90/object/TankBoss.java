@@ -1,6 +1,5 @@
 package com.nhahv.tank90.object;
 
-import com.nhahv.tank90.images.ImageIcons;
 import com.nhahv.tank90.maps.Bird;
 import com.nhahv.tank90.maps.MapsManagers;
 import com.nhahv.tank90.models.Models;
@@ -25,19 +24,12 @@ public class TankBoss extends Tank {
     private ArrayList<Image> mListImageType5;
     private ArrayList<Image> mListImageType6;
 
-    private ArrayList<Image> mListImages;
-    private Image mImage;
-
-    private int hpTank;
-
     public TankBoss(int x, int y, int size, int type, int orient) {
         super(x, y, size, type, orient);
 
         setTankPlay(false);
-        // tao list image boss
         setListImages();
         setListImageShow();
-
         int xRandom = new Random().nextInt(3);
         if (xRandom == 0) {
             setX(0);
@@ -50,141 +42,124 @@ public class TankBoss extends Tank {
 
     @Override
     public void remove() {
-        new Thread() {
-            @Override
-            public void run() {
-                super.run();
-                try {
-                    setImage(new ImageIcons("/IMAGES/bomb_wall.png").getImage());
-                    Thread.sleep(1000);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
-            }
-        }.start();
+//        new Thread() {
+//            @Override
+//            public void run() {
+//                super.run();
+//                try {
+//                    setImage(new ImageIcons("/IMAGES/bomb_wall.png").getImage());
+//                    Thread.sleep(1000);
+//                } catch (InterruptedException e) {
+//                    e.printStackTrace();
+//                }
+//            }
+//        }.start();
         setX(-100);
         setY(-100);
     }
 
     public void draw(Graphics2D graphics2D) {
-        graphics2D.drawImage(getImages(), getX(), getY(), getSize(), getSize(), null);
+        getImages();
+        graphics2D.drawImage(getImage(), getX(), getY(), getSize(), getSize(), null);
+        for (Bullet bullet : getListBullets()) {
+            bullet.draw(graphics2D);
+        }
     }
 
-    private Image getImages() {
-
+    private void getImages() {
         setListImageShow();
-        mImage = mListImages.get(Models.UP);
-
+        setImage(getListTank().get(Models.UP));
         switch (getOrient()) {
             case Models.UP:
-                mImage = mListImages.get(Models.UP);
+                setImage(getListTank().get(Models.UP));
                 break;
             case Models.DOWN:
-                mImage = mListImages.get(Models.DOWN);
+                setImage(getListTank().get(Models.DOWN));
                 break;
             case Models.LEFT:
-                mImage = mListImages.get(Models.LEFT);
+                setImage(getListTank().get(Models.LEFT));
                 break;
             case Models.RIGHT:
-                mImage = mListImages.get(Models.RIGHT);
+                setImage(getListTank().get(Models.RIGHT));
                 break;
         }
-
-        return mImage;
     }
 
     private void setListImageShow() {
         switch (getType()) {
             case Models.TYPE_BOSS_1:
-                mListImages = mListImageType1;
+                setListTank(mListImageType1);
                 break;
             case Models.TYPE_BOSS_2:
-                mListImages = mListImageType2;
+                setListTank(mListImageType2);
                 break;
             case Models.TYPE_BOSS_3:
-                mListImages = mListImageType3;
+                setListTank(mListImageType3);
                 break;
             case Models.TYPE_BOSS_4:
-                mListImages = mListImageType4;
+                setListTank(mListImageType4);
                 break;
             case Models.TYPE_BOSS_5:
-                mListImages = mListImageType5;
+                setListTank(mListImageType5);
                 break;
             case Models.TYPE_BOSS_6:
-                mListImages = mListImageType6;
+                setListTank(mListImageType6);
                 break;
         }
     }
 
-    public void move(MapsManagers mapsManagers, Bird bird) {
+    public void move(MapsManagers mapsManagers, Bird bird, ManagerTankBoss managerTankBoss) {
 
         switch (getOrient()) {
             case Models.UP:
                 if (getY() > 0) {
                     setY(getY() - getSpeedMode());
-                    if (isIntersect(mapsManagers, bird)) {
+                    if (isIntersect(mapsManagers, bird, managerTankBoss)) {
                         setY(getY() + getSpeedMode());
-
-                        this.setOrient(Models.DOWN);
-                        this.mImage = mListImages.get(Models.DOWN);
-
+                        setOrientTankBoss();
                     }
-                }
-                if (getY() <= 0) {
+                } else if (getY() <= 0) {
                     this.setOrient(Models.DOWN);
-                    this.mImage = mListImages.get(Models.DOWN);
+                    setImage(getListTank().get(Models.DOWN));
                 }
                 break;
             case Models.DOWN:
                 if (getY() < Models.SIZE_MAPS - getSize()) {
                     setY(getY() + getSpeedMode());
-                    if (isIntersect(mapsManagers, bird)) {
+                    if (isIntersect(mapsManagers, bird, managerTankBoss)) {
                         setY(getY() - getSpeedMode());
-
-                        this.setOrient(Models.UP);
-                        this.mImage = mListImages.get(Models.UP);
+                        setOrientTankBoss();
 
                     }
-                }
-                if (getY() >= Models.SIZE_MAPS - getSize()) {
+                } else if (getY() >= Models.SIZE_MAPS - getSize()) {
                     this.setOrient(Models.UP);
-                    this.mImage = mListImages.get(Models.UP);
+                    setImage(getListTank().get(Models.UP));
                 }
-
                 break;
             case Models.LEFT:
                 if (getX() > 0) {
                     setX(getX() - getSpeedMode());
-                    if (isIntersect(mapsManagers, bird)) {
+                    if (isIntersect(mapsManagers, bird, managerTankBoss)) {
                         setX(getX() + getSpeedMode());
-
-                        this.setOrient(Models.RIGHT);
-                        this.mImage = mListImages.get(Models.RIGHT);
-
+                        setOrientTankBoss();
                     }
-                }
-                if (getX() <= 0) {
+                } else if (getX() <= 0) {
                     this.setOrient(Models.RIGHT);
-                    this.mImage = mListImages.get(Models.RIGHT);
+                    setImage(getListTank().get(Models.RIGHT));
                 }
 
                 break;
             case Models.RIGHT:
                 if (getX() < Models.SIZE_MAPS - getSize()) {
                     setX(getX() + getSpeedMode());
-                    if (isIntersect(mapsManagers, bird)) {
+                    if (isIntersect(mapsManagers, bird, managerTankBoss)) {
                         setX(getX() - getSpeedMode());
-
-                        this.setOrient(Models.LEFT);
-                        this.mImage = mListImages.get(Models.LEFT);
-
+                        setOrientTankBoss();
                     }
-                }
-                if (getX() >= Models.SIZE_MAPS - getSize()) {
+                } else if (getX() >= Models.SIZE_MAPS - getSize()) {
                     this.setOrient(Models.LEFT);
-                    this.mImage = mListImages.get(Models.LEFT);
+                    setImage(getListTank().get(Models.LEFT));
                 }
-
                 break;
         }
     }
@@ -212,4 +187,11 @@ public class TankBoss extends Tank {
         }
         return listImages;
     }
+
+    private void setOrientTankBoss() {
+        int random = new Random().nextInt(4);
+        setOrient(random);
+        setImage(getListTank().get(random));
+    }
+
 }

@@ -18,8 +18,6 @@ import java.util.ArrayList;
  */
 public class Bullet extends CommonSize {
 
-    private ArrayList<Image> mListNormal;
-    private ArrayList<Image> mListBig;
     private int speedBullet;
     private int orient;
     private int type;
@@ -29,47 +27,23 @@ public class Bullet extends CommonSize {
 
     public Bullet(int x, int y, int width, int orient, int type) {
         super(x, y, width);
+
         this.speedBullet = Models.SPEED_BULLET_NORMAL;
         this.orient = orient;
-//        this.type = type;
         this.type = Models.TYPE_BULLET_NORMAL;
         isTankPlay = false;
-        setImageNormal();
-        setListImageBig(Models.BULLET_BIG);
-        setImagesBulletShow();
+        setListImageBullet(Models.BULLET_BIG);
     }
 
-    private void setImagesBulletShow() {
-        if (type == Models.TYPE_BULLET_BIG) {
-            mListBullet = mListNormal;
-        } else {
-            mListBullet = mListBig;
-        }
-    }
+    private void setListImageBullet(String imgName) {
 
-    private void setImageNormal() {
-        mListNormal = new ArrayList<>();
-        Image image = new ImageIcons(Models.BULLET_NORMAL_UP).getImage();
-        mListNormal.add(image);
-        image = new ImageIcons(Models.BULLET_NORMAL_DOWN).getImage();
-        mListNormal.add(image);
-
-        image = new ImageIcons(Models.BULLET_NORMAL_LEFT).getImage();
-        mListNormal.add(image);
-
-        image = new ImageIcons(Models.BULLET_NORMAL_RIGHT).getImage();
-        mListNormal.add(image);
-    }
-
-    private void setListImageBig(String imgName) {
-
-        mListBig = new ArrayList<>();
+        mListBullet = new ArrayList<>();
         try {
             BufferedImage buffReadImage = ImageIO.read(new File("src" + imgName));
             BufferedImage buffCutImage;
             for (int i = 0; i < Models.NUMBER_BOOS; i++) {
                 buffCutImage = buffReadImage.getSubimage(0, i * getSize(), getSize(), getSize());
-                mListBig.add(buffCutImage);
+                mListBullet.add(buffCutImage);
             }
         } catch (IOException e) {
             e.printStackTrace();
@@ -77,8 +51,6 @@ public class Bullet extends CommonSize {
     }
 
     public void draw(Graphics2D graphics2D) {
-
-        setImagesBulletShow();
 
         switch (orient) {
             case Models.UP:
@@ -98,11 +70,6 @@ public class Bullet extends CommonSize {
         graphics2D.drawImage(imageBullet, getX(), getY(), getSize(), getSize(), null);
     }
 
-    public void setSpeedBullet(int x) {
-        this.speedBullet = x;
-    }
-
-    // init images bullet big
 
     public void move(MapsManagers mapsManagers, Bird bird, TankPlayer tankPlayer, ManagerTankBoss managerTankBoss) {
 
@@ -126,7 +93,6 @@ public class Bullet extends CommonSize {
                         if (isIntersect(mapsManagers)) {
                             setY(getY() - speedBullet);
                         }
-
                     }
                     break;
                 case Models.LEFT:
@@ -169,21 +135,8 @@ public class Bullet extends CommonSize {
     }
 
     private void removeBullets() {
-        new Thread() {
-            @Override
-            public void run() {
-                super.run();
-                try {
-                    imageBullet = new ImageIcons("/IMAGES/bomb_wall.png").getImage();
-                    Thread.sleep(1000);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
-                setX(0);
-                setY(0);
-            }
-        }.start();
-
+        setX(0);
+        setY(0);
     }
 
     public boolean isIntersect(MapsManagers mapsManagers) {
@@ -231,30 +184,30 @@ public class Bullet extends CommonSize {
     public boolean isKillTank(TankPlayer tankPlayer, ManagerTankBoss managerTankBoss) {
 
         if (!isTankPlay) {
-            // kiem tra tank play
             if (tankPlayer.getRectangle().intersects(getRectangle())) {
                 tankPlayer.remove();
                 removeBullet();
-                System.out.println("" + isTankPlay);
+                return true;
             }
         } else if (isTankPlay) {
-            // kiem tra manager boss
             int size = managerTankBoss.getmListBoss().size();
             for (int i = size - 1; i >= 0; i--) {
                 TankBoss tankBoss = managerTankBoss.getmListBoss().get(i);
                 if (tankBoss.getRectangle().intersects(getRectangle())) {
                     managerTankBoss.getmListBoss().remove(i);
-                    removeBullet();
-                    System.out.println("" + isTankPlay);
+                    return true;
                 }
             }
         }
-
         return true;
     }
 
     private boolean isIntersectItemMaps(ItemsMaps itemsMaps) {
         return itemsMaps.getRectangle().intersects(getRectangle());
+    }
+
+    public void setImageBullet() {
+        imageBullet = new ImageIcons(Models.BOMB).getImage();
     }
 
     public boolean isTankPlay() {

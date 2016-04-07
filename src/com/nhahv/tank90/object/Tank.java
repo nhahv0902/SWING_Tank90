@@ -20,10 +20,12 @@ public abstract class Tank extends CommonSize {
     private int timeFire;
     private Image image;
     private boolean isTankPlay;
+    private ArrayList<Image> mListTank;
 
     public Tank(int x, int y, int size, int type, int orient) {
         super(x, y, size);
 
+        mListTank = new ArrayList<>();
         setSize(Models.SIZE_BOOS);
         this.speedMode = Models.SPEED_DEFAULT;
         this.type = type;
@@ -31,7 +33,6 @@ public abstract class Tank extends CommonSize {
         this.timeFire = 0;
         this.mListBullets = new ArrayList<>();
         this.isTankPlay = false;
-
     }
 
     public int getType() {
@@ -55,9 +56,6 @@ public abstract class Tank extends CommonSize {
         return speedMode;
     }
 
-    public void setSpeedMode(int speedMode) {
-        this.speedMode = speedMode;
-    }
 
     public boolean isFire() {
         return timeFire <= 0;
@@ -96,18 +94,6 @@ public abstract class Tank extends CommonSize {
         }
     }
 
-    public void moveBullet(MapsManagers mapsManagers, Bird bird, TankPlayer tankPlayer, ManagerTankBoss managerTankBoss) {
-        for (int i = mListBullets.size() - 1; i >= 0; i--) {
-
-            mListBullets.get(i).move(mapsManagers, bird, tankPlayer, managerTankBoss);
-            if (mListBullets.get(i).getX() >= Models.WIDTH
-                    || mListBullets.get(i).getX() <= 0
-                    || mListBullets.get(i).getY() <= 0
-                    || mListBullets.get(i).getY() >= Models.HEIGHT) {
-                mListBullets.remove(i);
-            }
-        }
-    }
 
     public ArrayList<Bullet> getListBullets() {
         return mListBullets;
@@ -117,28 +103,35 @@ public abstract class Tank extends CommonSize {
         return new Rectangle(getX(), getY(), getSize(), getSize());
     }
 
-    protected boolean isIntersect(MapsManagers mapsManagers, Bird bird) {
+    protected boolean isIntersect(MapsManagers mapsManagers, Bird bird, ManagerTankBoss managerTankBoss) {
 
         for (ItemsMaps itemsMaps : mapsManagers.getListMaps()) {
-//            Rectangle rectangle = new Rectangle();
-//            Rectangle2D.intersect(itemsMaps.getRectangle(), getRectangle(), rectangle);
-            Rectangle rectangle = new Rectangle(getX() + 3, getY() + 3, getSize() - 8, getSize() - 8);
+            Rectangle rectangle = new Rectangle(getX() + 4, getY() + 4, getSize() - 10, getSize() - 10);
             if (itemsMaps.getRectangle().intersects(rectangle)
                     && !itemsMaps.isTankCross()) {
                 return true;
             }
-//            if (rectangle.getHeight() > 10 && rectangle.getWidth() >= 10)
-//                System.out.println(rectangle.getWidth() + " " + rectangle.getHeight() + "");
-//            if (rectangle.getWidth() >= 20 || rectangle.getHeight() >= 20
-//                    && !itemsMaps.isTankCross()) {
-//                return true;
-//            }
         }
+
+        if (checkCrossTankBoss(managerTankBoss) && isTankPlay) {
+            return true;
+        }
+
         if (bird.getRectangle().intersects(this.getRectangle())) {
             return true;
         }
         return false;
     }
+
+    public boolean checkCrossTankBoss(ManagerTankBoss managerTankBoss) {
+        for (TankBoss tankBoss : managerTankBoss.getmListBoss()) {
+            if (tankBoss.getRectangle().intersects(getRectangle())) {
+                return true;
+            }
+        }
+        return false;
+    }
+
 
     public Image getImage() {
         return image;
@@ -148,6 +141,7 @@ public abstract class Tank extends CommonSize {
         this.image = image;
     }
 
+
     public boolean isTankPlay() {
         return isTankPlay;
     }
@@ -156,6 +150,26 @@ public abstract class Tank extends CommonSize {
         isTankPlay = tankPlay;
     }
 
+    public ArrayList<Image> getListTank() {
+        return mListTank;
+    }
+
+    public void setListTank(ArrayList<Image> mListTank) {
+        this.mListTank = mListTank;
+    }
+
+    public void moveBullet(MapsManagers mapsManagers, Bird bird, TankPlayer tankPlayer, ManagerTankBoss managerTankBoss) {
+        for (int i = getListBullets().size() - 1; i >= 0; i--) {
+            getListBullets().get(i).move(mapsManagers, bird, tankPlayer, managerTankBoss);
+            if (getListBullets().get(i).getX() >= Models.WIDTH
+                    || getListBullets().get(i).getX() <= 0
+                    || getListBullets().get(i).getY() <= 0
+                    || getListBullets().get(i).getY() >= Models.HEIGHT) {
+                getListBullets().remove(i);
+            }
+        }
+    }
 
     public abstract void remove();
+
 }

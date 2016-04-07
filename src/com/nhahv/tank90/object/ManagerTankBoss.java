@@ -28,21 +28,9 @@ public class ManagerTankBoss {
         return mListBoss;
     }
 
-    public void setmListBoss(ArrayList<TankBoss> mListBoss) {
-        this.mListBoss = mListBoss;
-    }
-
-//    public void setmListBoss() {
-//        TankBoss tankBoss;
-//        for (int i = 0; i < numberBoss; i++) {
-//            tankBoss = new TankBoss(0, 0, 0, 1, new Random().nextInt(3));
-//            mListBoss.add(tankBoss);
-//        }
-//    }
-
-    public void moveTankBoss(MapsManagers mapsManagers, Bird bird) {
+    public void moveTime() {
         for (TankBoss tankBoss : mListBoss) {
-            tankBoss.move(mapsManagers, bird);
+            tankBoss.moveTimeFire();
         }
     }
 
@@ -56,9 +44,28 @@ public class ManagerTankBoss {
         }
     }
 
+
     public void draw(Graphics2D graphics2D) {
         for (TankBoss tankBoss : mListBoss) {
             tankBoss.draw(graphics2D);
+        }
+    }
+
+    public void tankFire() {
+        for (TankBoss tankBoss : mListBoss) {
+            tankBoss.tankFire();
+        }
+    }
+
+    public void move(MapsManagers mMapsManagers, Bird mBird, ManagerTankBoss mTankBoss) {
+        for (TankBoss tankBoss : mListBoss) {
+            tankBoss.move(mMapsManagers, mBird, mTankBoss);
+        }
+    }
+
+    public void moveBullet(MapsManagers mMapsManagers, Bird mBird, TankPlayer mPlayerOne, ManagerTankBoss mTankBoss) {
+        for (TankBoss tankBoss : mListBoss) {
+            tankBoss.moveBullet(mMapsManagers, mBird, mPlayerOne, mTankBoss);
         }
     }
 }

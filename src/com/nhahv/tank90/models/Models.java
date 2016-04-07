@@ -55,10 +55,6 @@ public class Models {
 
     public static final String CLOSE_WINDOWS = "Close Game";
 
-    public static final String BULLET_NORMAL_UP = "/IMAGES/bullet_up.png";
-    public static final String BULLET_NORMAL_DOWN = "/IMAGES/bullet_down.png";
-    public static final String BULLET_NORMAL_LEFT = "/IMAGES/bullet_left.png";
-    public static final String BULLET_NORMAL_RIGHT = "/IMAGES/bullet_right.png";
     public static final String BULLET_BIG = "/IMAGES/bullet_big.png";
 
     public static final String PLAY_TWO_UP = "/IMAGES/player_two_up.png";
@@ -134,17 +130,17 @@ public class Models {
     public static final int START_PLAYER_ONE = 8 * SIZE_ITEMS_MAPS;
     public static final int START_PLAYER_TWO = 16 * SIZE_ITEMS_MAPS;
 
-    public static final int SPEED_DEFAULT = 1;
+    public static final int SPEED_DEFAULT = 2;
     public static final int SPEED_MAX = 2;
     public static final int TIME_SPEED_MAX = 15;
 
     public static final int TIME_FIRE_NORMAL = 2;
     public static final int TIME_FIRE_MAX = 1;
-    public static final int SPEED_BULLET_NORMAL = 1;
+    public static final int SPEED_BULLET_NORMAL = 3;
     public static final int SPEED_BULLET_MAX = 2;
 
     public static final int TIME_OUT = 800;
-    public static final int TIME_SLEEP = 6;
+    public static final int TIME_SLEEP = 10;
 
     public static final int SIZE_TANK_PLAYER = 56;
     public static final int SIZE_TANK_RUN = 70;
@@ -156,4 +152,5 @@ public class Models {
     public static final int PLAYER_21 = 2;
     public static final int PLAYER_22 = 3;
     public static final String BOMB_BIRD = "/IMAGES/bomb_bird.png";
+    public static final String BOMB = "/IMAGES/bomb_bomb.png";
 }

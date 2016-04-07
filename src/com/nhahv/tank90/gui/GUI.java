@@ -1,6 +1,5 @@
 package com.nhahv.tank90.gui;
 
-import com.nhahv.tank90.images.ImagesManager;
 import com.nhahv.tank90.models.Models;
 import com.sun.java.swing.plaf.windows.WindowsLookAndFeel;
 
@@ -59,7 +58,6 @@ public class GUI extends JFrame {
                 () -> stopGUI()
         );
 
-        new ImagesManager();
         new Models();
     }
 

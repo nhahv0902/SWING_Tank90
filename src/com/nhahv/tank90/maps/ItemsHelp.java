@@ -1,6 +1,5 @@
 package com.nhahv.tank90.maps;
 
-import com.nhahv.tank90.images.ImagesManager;
 import com.nhahv.tank90.models.Models;
 
 import java.awt.*;
@@ -13,7 +12,7 @@ public class ItemsHelp extends Items {
 
     public ItemsHelp(int x, int y, int width, int type) {
         super(x, y, width, type);
-        setListImages(ImagesManager.getListItemsHelp());
+
     }
 
     @Override
