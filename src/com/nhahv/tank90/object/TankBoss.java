@@ -4,11 +4,7 @@ import com.nhahv.tank90.maps.Bird;
 import com.nhahv.tank90.maps.MapsManagers;
 import com.nhahv.tank90.models.Models;
 
-import javax.imageio.ImageIO;
 import java.awt.*;
-import java.awt.image.BufferedImage;
-import java.io.File;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Random;
 
@@ -40,12 +36,6 @@ public class TankBoss extends Tank {
         }
     }
 
-    @Override
-    public void remove() {
-        setX(-100);
-        setY(-100);
-    }
-
     public void draw(Graphics2D graphics2D) {
         getImages();
         graphics2D.drawImage(getImage(), getX(), getY(), getSize(), getSize(), null);
@@ -55,8 +45,7 @@ public class TankBoss extends Tank {
     }
 
     private void getImages() {
-        setListImageShow();
-        setImage(getListTank().get(Models.UP));
+
         switch (getOrient()) {
             case Models.UP:
                 setImage(getListTank().get(Models.UP));
@@ -153,32 +142,25 @@ public class TankBoss extends Tank {
     }
 
     private void setListImages() {
-        mListImageType1 = getListImages(Models.BOSS_1);
-        mListImageType2 = getListImages(Models.BOSS_2);
-        mListImageType3 = getListImages(Models.BOSS_3);
-        mListImageType4 = getListImages(Models.BOSS_4);
-        mListImageType5 = getListImages(Models.BOSS_5);
-        mListImageType6 = getListImages(Models.BOSS_6);
-    }
-
-    private ArrayList<Image> getListImages(String name) {
-        ArrayList<Image> listImages = new ArrayList<>();
-        try {
-            BufferedImage buffReadImage = ImageIO.read(new File("src" + name));
-            BufferedImage buffCutImage;
-            for (int i = 0; i < Models.NUMBER_BOOS; i++) {
-                buffCutImage = buffReadImage.getSubimage(0, i * getSize(), getSize(), getSize());
-                listImages.add(buffCutImage);
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        return listImages;
+        mListImageType1 = setListImages(Models.BOSS_1);
+        mListImageType2 = setListImages(Models.BOSS_2);
+        mListImageType3 = setListImages(Models.BOSS_3);
+        mListImageType4 = setListImages(Models.BOSS_4);
+        mListImageType5 = setListImages(Models.BOSS_5);
+        mListImageType6 = setListImages(Models.BOSS_6);
     }
 
     private void setOrientTankBoss() {
         int random = new Random().nextInt(4);
-        setOrient(random);
+        if (random == getOrient()) {
+            if (getOrient() > 0) {
+                setOrient(random--);
+            } else {
+                setOrient(random++);
+            }
+        } else {
+            setOrient(random);
+        }
         setImage(getListTank().get(random));
     }
 }

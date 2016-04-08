@@ -73,11 +73,6 @@ public class Models {
 
     public static final int PADDING_TANK = 6;
 
-
-    // type of player
-    public static final int TYPE_PLAYER_1 = 0;
-    public static final int TYPE_PLAYER_2 = 1;
-
     // type of boss
     public static final int TYPE_BOSS_1 = 0;
     public static final int TYPE_BOSS_2 = 1;

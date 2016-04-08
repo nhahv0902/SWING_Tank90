@@ -15,19 +15,17 @@ import java.util.BitSet;
 /**
  * Created by Nhahv on 4/2/2016.
  */
-public class PlayGame extends BaseContainer {
+public class PlayGame extends BaseContainer implements Runnable {
 
     private static int mLevel_1 = 1;
     private MapsManagers mMapsManagers;
     private Bird mBird;
-
     private TankPlayer mPlayerOne;
+    private TankPlayer mPlayerTwo;
     private KeyAdapter mKeyAdapter;
     private BitSet mKeyValue;
-    private Runnable mRunnable;
     private Thread mThreadPlayerOne;
 
-    private Graphics2D mGraphics2D;
     private ManagerTankBoss mTankBoss;
 
     @Override
@@ -51,7 +49,8 @@ public class PlayGame extends BaseContainer {
     private void initObject() {
 
         mKeyValue.clear();
-        mPlayerOne = new TankPlayer(0, 0, 0, 0, 0);
+        mPlayerOne = new TankPlayer(0, 0, 0, Models.PLAYER_11, 0);
+        mPlayerTwo = new TankPlayer(0, 0, 0, Models.PLAYER_21, 0);
         mBird = new Bird();
         mMapsManagers = new MapsManagers(mLevel_1);
         mTankBoss = new ManagerTankBoss();
@@ -75,47 +74,8 @@ public class PlayGame extends BaseContainer {
 
         this.addKeyListener(mKeyAdapter);
 
-        mRunnable = () -> {
-            try {
-                while (true) {
 
-                    if (mBird != null && !mBird.getLive()) {
-                        int result = JOptionPane.showConfirmDialog(PlayGame.this, "You have play continue", "Play Again", JOptionPane.YES_NO_OPTION);
-                        if (result == JOptionPane.YES_OPTION) {
-                            initObject();
-                        } else {
-                            mThreadPlayerOne.stop();
-                            System.exit(0);
-                        }
-                    }
-
-                    if (mTankBoss.getListBoss().size() == 0) {
-                        int result = JOptionPane.showConfirmDialog(PlayGame.this, "You have play continue", "Maps Level Up", JOptionPane.YES_NO_OPTION);
-                        if (result == JOptionPane.YES_OPTION) {
-                            mLevel_1++;
-                            initObject();
-                        } else {
-                            System.exit(0);
-                        }
-                    }
-                    moveTankPlayer();
-                    mPlayerOne.moveBullet(mMapsManagers, mBird, mPlayerOne, mTankBoss);
-                    mPlayerOne.moveTimeFire();
-                    mTankBoss.tankFire();
-                    mTankBoss.move(mMapsManagers, mBird, mTankBoss);
-                    mTankBoss.moveBullet(mMapsManagers, mBird, mPlayerOne, mTankBoss);
-                    mTankBoss.moveTime();
-
-                    Thread.sleep(Models.TIME_SLEEP);
-                    mTankBoss.addListTankBoss();
-                    repaint();
-                }
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-        };
-
-        mThreadPlayerOne = new Thread(mRunnable);
+        mThreadPlayerOne = new Thread(this);
         mThreadPlayerOne.start();
 
     }
@@ -124,13 +84,14 @@ public class PlayGame extends BaseContainer {
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
 
-        mGraphics2D = (Graphics2D) g;
+        Graphics2D mGraphics2D = (Graphics2D) g;
         mGraphics2D.setRenderingHint(RenderingHints.KEY_ALPHA_INTERPOLATION, RenderingHints.VALUE_ALPHA_INTERPOLATION_SPEED);
         mGraphics2D.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
         mGraphics2D.setRenderingHint(RenderingHints.KEY_INTERPOLATION, RenderingHints.VALUE_INTERPOLATION_BICUBIC);
         drawMaps(mGraphics2D);
         drawBird(mGraphics2D);
         mPlayerOne.draw(mGraphics2D);
+        mPlayerTwo.draw(mGraphics2D);
         mTankBoss.draw(mGraphics2D);
     }
 
@@ -157,9 +118,26 @@ public class PlayGame extends BaseContainer {
             mPlayerOne.setOrient(Models.RIGHT);
             mPlayerOne.move(mMapsManagers, mBird, mTankBoss);
         }
-        if (mKeyValue.get(KeyEvent.VK_ENTER)) {
+        if (mKeyValue.get(KeyEvent.VK_INSERT)) {
             mPlayerOne.tankFire();
         }
+        if (mKeyValue.get(KeyEvent.VK_W)) {
+            mPlayerTwo.setOrient(Models.UP);
+            mPlayerTwo.move(mMapsManagers, mBird, mTankBoss);
+        } else if (mKeyValue.get(KeyEvent.VK_S)) {
+            mPlayerTwo.setOrient(Models.DOWN);
+            mPlayerTwo.move(mMapsManagers, mBird, mTankBoss);
+        } else if (mKeyValue.get(KeyEvent.VK_A)) {
+            mPlayerTwo.setOrient(Models.LEFT);
+            mPlayerTwo.move(mMapsManagers, mBird, mTankBoss);
+        } else if (mKeyValue.get(KeyEvent.VK_D)) {
+            mPlayerTwo.setOrient(Models.RIGHT);
+            mPlayerTwo.move(mMapsManagers, mBird, mTankBoss);
+        }
+        if (mKeyValue.get(KeyEvent.VK_SPACE)) {
+            mPlayerTwo.tankFire();
+        }
+
     }
 
     @Override
@@ -169,6 +147,52 @@ public class PlayGame extends BaseContainer {
             this.requestFocus();
             this.requestFocus(true);
             this.requestFocusInWindow();
+        }
+    }
+
+    @Override
+    public void run() {
+        try {
+            while (true) {
+
+                if (mBird != null && !mBird.getLive() || (!mPlayerOne.isLive() && !mPlayerTwo.isLive())) {
+                    int result = JOptionPane.showConfirmDialog(PlayGame.this, "You have play continue", "Play Again", JOptionPane.YES_NO_OPTION);
+                    if (result == JOptionPane.YES_OPTION) {
+                        initObject();
+                    } else {
+                        mThreadPlayerOne.stop();
+                        System.exit(0);
+                    }
+                }
+
+                if (mTankBoss.getListBoss().size() == 0) {
+                    int result = JOptionPane.showConfirmDialog(PlayGame.this, "You have play continue", "Maps Level Up", JOptionPane.YES_NO_OPTION);
+                    if (result == JOptionPane.YES_OPTION) {
+                        mLevel_1++;
+                        initObject();
+                    } else {
+                        System.exit(0);
+                    }
+                }
+                moveTankPlayer();
+                mPlayerOne.moveBullet(mMapsManagers, mBird, mPlayerOne, mTankBoss);
+                mPlayerOne.moveTimeFire();
+
+                mPlayerTwo.moveBullet(mMapsManagers, mBird, mPlayerOne, mTankBoss);
+                mPlayerTwo.moveTimeFire();
+
+
+                mTankBoss.tankFire();
+                mTankBoss.move(mMapsManagers, mBird, mTankBoss);
+                mTankBoss.moveBullet(mMapsManagers, mBird, mPlayerOne, mTankBoss);
+                mTankBoss.moveTime();
+
+                Thread.sleep(Models.TIME_SLEEP);
+                mTankBoss.addListTankBoss();
+                repaint();
+            }
+        } catch (InterruptedException e) {
+            e.printStackTrace();
         }
     }
 }

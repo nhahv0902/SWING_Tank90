@@ -6,11 +6,7 @@ import com.nhahv.tank90.maps.ItemsMaps;
 import com.nhahv.tank90.maps.MapsManagers;
 import com.nhahv.tank90.models.Models;
 
-import javax.imageio.ImageIO;
 import java.awt.*;
-import java.awt.image.BufferedImage;
-import java.io.File;
-import java.io.IOException;
 import java.util.ArrayList;
 
 /**
@@ -32,22 +28,7 @@ public class Bullet extends CommonSize {
         this.orient = orient;
         this.type = Models.TYPE_BULLET_NORMAL;
         isTankPlay = false;
-        setListImageBullet(Models.BULLET_BIG);
-    }
-
-    private void setListImageBullet(String imgName) {
-
-        mListBullet = new ArrayList<>();
-        try {
-            BufferedImage buffReadImage = ImageIO.read(new File("src" + imgName));
-            BufferedImage buffCutImage;
-            for (int i = 0; i < Models.NUMBER_BOOS; i++) {
-                buffCutImage = buffReadImage.getSubimage(0, i * getSize(), getSize(), getSize());
-                mListBullet.add(buffCutImage);
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        mListBullet = setListImages(Models.BULLET_BIG);
     }
 
     public void draw(Graphics2D graphics2D) {
@@ -115,9 +96,7 @@ public class Bullet extends CommonSize {
             isKillBird(bird);
             isKillBullet(managerTankBoss, tankPlayer);
             isKillTank(tankPlayer, managerTankBoss);
-            System.out.println(bird.getLive() + "");
         }
-
     }
 
     private void removeBullets(MapsManagers mapsManagers) {
@@ -203,7 +182,9 @@ public class Bullet extends CommonSize {
 
         if (!isTankPlay) {
             if (tankPlayer.getRectangle().intersects(getRectangle())) {
-                tankPlayer.remove();
+                tankPlayer.removeLive();
+                if (tankPlayer.isLive())
+                    tankPlayer.remove();
                 removeBullet();
                 return true;
             }

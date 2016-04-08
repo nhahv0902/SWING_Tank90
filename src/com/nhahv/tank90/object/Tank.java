@@ -16,11 +16,11 @@ public abstract class Tank extends CommonSize {
     private int type;
     private int orient;
     private int speedMode;
-    private ArrayList<Bullet> mListBullets;
     private int timeFire;
     private Image image;
     private boolean isTankPlay;
     private ArrayList<Image> mListTank;
+    private ArrayList<Bullet> mListBullets;
 
     public Tank(int x, int y, int size, int type, int orient) {
         super(x, y, size);
@@ -169,7 +169,4 @@ public abstract class Tank extends CommonSize {
             }
         }
     }
-
-    public abstract void remove();
-
 }
