@@ -40,6 +40,7 @@ public class PlayGame extends BaseContainer {
 
     @Override
     protected void initComponents() {
+        mKeyValue = new BitSet(256);
     }
 
     @Override
@@ -48,12 +49,12 @@ public class PlayGame extends BaseContainer {
     }
 
     private void initObject() {
-        mKeyValue = new BitSet(256);
+
         mKeyValue.clear();
         mPlayerOne = new TankPlayer(0, 0, 0, 0, 0);
         mBird = new Bird();
         mMapsManagers = new MapsManagers(mLevel_1);
-        mTankBoss = new ManagerTankBoss(24, 4);
+        mTankBoss = new ManagerTankBoss();
     }
 
     @Override
@@ -79,10 +80,24 @@ public class PlayGame extends BaseContainer {
                 while (true) {
 
                     if (mBird != null && !mBird.getLive()) {
-                        JOptionPane.showConfirmDialog(PlayGame.this, "message");
-                        mThreadPlayerOne.stop();
+                        int result = JOptionPane.showConfirmDialog(PlayGame.this, "You have play continue", "Play Again", JOptionPane.YES_NO_OPTION);
+                        if (result == JOptionPane.YES_OPTION) {
+                            initObject();
+                        } else {
+                            mThreadPlayerOne.stop();
+                            System.exit(0);
+                        }
                     }
-                    Thread.sleep(Models.TIME_SLEEP);
+
+                    if (mTankBoss.getListBoss().size() == 0) {
+                        int result = JOptionPane.showConfirmDialog(PlayGame.this, "You have play continue", "Maps Level Up", JOptionPane.YES_NO_OPTION);
+                        if (result == JOptionPane.YES_OPTION) {
+                            mLevel_1++;
+                            initObject();
+                        } else {
+                            System.exit(0);
+                        }
+                    }
                     moveTankPlayer();
                     mPlayerOne.moveBullet(mMapsManagers, mBird, mPlayerOne, mTankBoss);
                     mPlayerOne.moveTimeFire();
@@ -91,7 +106,8 @@ public class PlayGame extends BaseContainer {
                     mTankBoss.moveBullet(mMapsManagers, mBird, mPlayerOne, mTankBoss);
                     mTankBoss.moveTime();
 
-
+                    Thread.sleep(Models.TIME_SLEEP);
+                    mTankBoss.addListTankBoss();
                     repaint();
                 }
             } catch (InterruptedException e) {

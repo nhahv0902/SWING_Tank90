@@ -78,7 +78,6 @@ public class Bullet extends CommonSize {
                 case Models.UP:
                     if (getY() > 0) {
                         setY(getY() - speedBullet);
-
                         removeBullets(mapsManagers);
                         if (isIntersect(mapsManagers)) {
                             setY(getY() + speedBullet);
@@ -87,7 +86,6 @@ public class Bullet extends CommonSize {
                     break;
                 case Models.DOWN:
                     if (getY() < Models.HEIGHT) {
-//                        isKillTank(tankPlayer, managerTankBoss);
                         setY(getY() + speedBullet);
                         removeBullets(mapsManagers);
                         if (isIntersect(mapsManagers)) {
@@ -98,7 +96,6 @@ public class Bullet extends CommonSize {
                 case Models.LEFT:
                     if (getX() > 0) {
                         setX(getX() - speedBullet);
-//                        isKillTank(tankPlayer, managerTankBoss);
                         removeBullets(mapsManagers);
                         if (isIntersect(mapsManagers)) {
                             setX(getX() + speedBullet);
@@ -108,7 +105,6 @@ public class Bullet extends CommonSize {
                 case Models.RIGHT:
                     if (getX() < Models.WIDTH) {
                         setX(getX() + speedBullet);
-//                        isKillTank(tankPlayer, managerTankBoss);
                         removeBullets(mapsManagers);
                         if (isIntersect(mapsManagers)) {
                             setX(getX() - speedBullet);
@@ -126,8 +122,7 @@ public class Bullet extends CommonSize {
 
     private void removeBullets(MapsManagers mapsManagers) {
         if (isKillWall(mapsManagers)) {
-            setX(0);
-            setY(0);
+            removeBullet();
         }
     }
 
@@ -218,6 +213,7 @@ public class Bullet extends CommonSize {
                 TankBoss tankBoss = managerTankBoss.getListBoss().get(i);
                 if (tankBoss.getRectangle().intersects(getRectangle())) {
                     managerTankBoss.getListBoss().remove(i);
+                    managerTankBoss.moveNumberBulletCurrent();
                     removeBullet();
                     return true;
                 }

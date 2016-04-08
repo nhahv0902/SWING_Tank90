@@ -153,4 +153,6 @@ public class Models {
     public static final int PLAYER_22 = 3;
     public static final String BOMB_BIRD = "/IMAGES/bomb_bird.png";
     public static final String BOMB = "/IMAGES/bomb_bomb.png";
+    public static int NUMBER_BOOS_SHOW = 4;
+    public static int NUMBER_TANK_BOSS = 6;
 }

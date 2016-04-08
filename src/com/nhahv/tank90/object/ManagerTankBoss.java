@@ -2,6 +2,7 @@ package com.nhahv.tank90.object;
 
 import com.nhahv.tank90.maps.Bird;
 import com.nhahv.tank90.maps.MapsManagers;
+import com.nhahv.tank90.models.Models;
 
 import java.awt.*;
 import java.util.ArrayList;
@@ -15,11 +16,12 @@ public class ManagerTankBoss {
     private ArrayList<TankBoss> mListBoss;
     private int numberBoss;
     private int numberShow;
+    private int numberBossCurrent;
 
-    public ManagerTankBoss(int numberBoss, int numberShow) {
+    public ManagerTankBoss() {
 
-        this.numberBoss = numberBoss;
-        this.numberShow = numberShow;
+        this.numberBoss = Models.NUMBER_TANK_BOSS;
+        this.numberShow = Models.NUMBER_BOOS_SHOW;
         mListBoss = new ArrayList<>(numberBoss);
         initTankBoss();
     }
@@ -38,9 +40,30 @@ public class ManagerTankBoss {
 
         TankBoss tankBoss;
         Random random = new Random();
-        for (int i = 0; i < numberBoss && mListBoss.size() <= numberShow; i++) {
+        for (int i = 0; i < numberShow; i++) {
             tankBoss = new TankBoss(0, 0, 0, 0, random.nextInt(3));
             mListBoss.add(tankBoss);
+        }
+        numberBoss -= mListBoss.size();
+        numberBossCurrent = mListBoss.size();
+    }
+
+    public void addListTankBoss() {
+        Random random = new Random();
+        int x = random.nextInt(3);
+        TankBoss tankBoss;
+        if (numberBossCurrent < numberShow && numberBoss > 0) {
+
+            if (numberBoss < x) {
+                x = x - numberBoss;
+            }
+
+            for (int i = 0; i < x; i++) {
+                tankBoss = new TankBoss(0, 0, 0, 0, random.nextInt(3));
+                mListBoss.add(tankBoss);
+            }
+            numberBossCurrent += x;
+            numberBoss -= x;
         }
     }
 
@@ -67,5 +90,9 @@ public class ManagerTankBoss {
         for (TankBoss tankBoss : mListBoss) {
             tankBoss.moveBullet(mMapsManagers, mBird, mPlayerOne, mTankBoss);
         }
+    }
+
+    public void moveNumberBulletCurrent() {
+        numberBossCurrent--;
     }
 }
