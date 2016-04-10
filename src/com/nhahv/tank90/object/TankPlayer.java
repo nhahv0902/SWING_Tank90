@@ -13,10 +13,12 @@ import java.util.ArrayList;
  */
 public class TankPlayer extends Tank {
 
-    private ArrayList<Image> mListTankOne;
-    private ArrayList<Image> mListTankTwo;
-    private ArrayList<Image> mListTankOneBig;
-    private ArrayList<Image> mListTankTwoBig;
+    private static ArrayList<Image> mListTankOne;
+    private static ArrayList<Image> mListTankTwo;
+    private static ArrayList<Image> mListTankOneBig;
+    private static ArrayList<Image> mListTankTwoBig;
+    private static ArrayList<Image> mListTankBomb;
+
     private boolean isLive;
     private int numberLive;
 
@@ -27,8 +29,8 @@ public class TankPlayer extends Tank {
         setY(Models.SIZE_MAPS - Models.SIZE_TANK_PLAYER);
         setListTankOne();
         setListTankTwo();
-        mListTankOneBig = setListImages(Models.PLAY_ONE_ONE);
-        mListTankTwoBig = setListImages(Models.PLAY_ONE_TWO);
+        setImagesBig();
+
         setListImagesShow();
         this.isLive = true;
         this.numberLive = Models.NUMBER_BOOS;
@@ -37,6 +39,15 @@ public class TankPlayer extends Tank {
             setX(Models.START_PLAYER_ONE);
         } else {
             setX(Models.START_PLAYER_TWO);
+        }
+    }
+
+    private void setImagesBig() {
+        if (mListTankOneBig == null) {
+            mListTankOneBig = setListImages(Models.PLAY_ONE_ONE);
+        }
+        if (mListTankTwoBig == null) {
+            mListTankTwoBig = setListImages(Models.PLAY_ONE_TWO);
         }
     }
 
@@ -54,6 +65,19 @@ public class TankPlayer extends Tank {
         mListTankTwo.add(new ImageIcons(Models.PLAY_TWO_DOWN).getImage());
         mListTankTwo.add(new ImageIcons(Models.PLAY_TWO_LEFT).getImage());
         mListTankTwo.add(new ImageIcons(Models.PLAY_TWO_RIGHT).getImage());
+    }
+
+    /**
+     * init images play when die
+     */
+    private void setListTankBomb() {
+        if (mListTankBomb == null) {
+            mListTankBomb = new ArrayList<>();
+            mListTankBomb.add(new ImageIcons(Models.BOMB_BIRD).getImage());
+            mListTankBomb.add(new ImageIcons(Models.BOMB_BIRD).getImage());
+            mListTankBomb.add(new ImageIcons(Models.BOMB_BIRD).getImage());
+            mListTankBomb.add(new ImageIcons(Models.BOMB_BIRD).getImage());
+        }
     }
 
     public void draw(Graphics2D graphics2D) {
@@ -169,6 +193,14 @@ public class TankPlayer extends Tank {
 
     public void changeImageBomb() {
         setImage(new ImageIcons(Models.BOMB_BIRD).getImage());
+    }
+
+    public void changeImages() {
+        setListTank(mListTankBomb);
+    }
+
+    public void setImagesStart() {
+        setListTank(mListTankOneBig);
     }
 
 }

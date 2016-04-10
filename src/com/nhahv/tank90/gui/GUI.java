@@ -1,5 +1,7 @@
 package com.nhahv.tank90.gui;
 
+import com.nhahv.tank90.SoundManager;
+import com.nhahv.tank90.interfaces.ExitGUI;
 import com.nhahv.tank90.models.Models;
 import com.sun.java.swing.plaf.windows.WindowsLookAndFeel;
 
@@ -50,12 +52,18 @@ public class GUI extends JFrame {
         } catch (UnsupportedLookAndFeelException e) {
             e.printStackTrace();
         }
+        new SoundManager().getRunGame().playRun();
     }
 
     private void initComponents() {
         mMyContainer = new MyContainer();
         mMyContainer.setExitGUI(
-                () -> stopGUI()
+                new ExitGUI() {
+                    @Override
+                    public void exitGUI() {
+                        stopGUI();
+                    }
+                }
         );
 
         new Models();

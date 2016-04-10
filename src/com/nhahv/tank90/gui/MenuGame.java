@@ -82,25 +82,29 @@ public class MenuGame extends BaseContainer {
 
     private void startThreadPlay() {
 
-        mThread = new Thread(() -> {
-            while (true) {
-                try {
-                    mPlayOne.changeImage(new ImageIcons(Models.ICONS_PLAY_ONE).getImage());
-                    mPlayTwo.changeImage(new ImageIcons(Models.ICONS_PLAY_TWO).getImage());
-                    mTankRun.move();
-                    Thread.sleep(3);
-                    if (isOne) {
-                        mPlayOne.changeImage(new ImageIcons(Models.ICONS_PLAY_ONE_OFF).getImage());
-                    } else {
-                        mPlayTwo.changeImage(new ImageIcons(Models.ICONS_PLAY_TWO_OFF).getImage());
-                    }
+        mThread = new Thread() {
+            @Override
+            public void run() {
+                super.run();
+                while (true) {
+                    try {
+                        mPlayOne.changeImage(new ImageIcons(Models.ICONS_PLAY_ONE).getImage());
+                        mPlayTwo.changeImage(new ImageIcons(Models.ICONS_PLAY_TWO).getImage());
+                        mTankRun.move();
+                        Thread.sleep(3);
+                        if (isOne) {
+                            mPlayOne.changeImage(new ImageIcons(Models.ICONS_PLAY_ONE_OFF).getImage());
+                        } else {
+                            mPlayTwo.changeImage(new ImageIcons(Models.ICONS_PLAY_TWO_OFF).getImage());
+                        }
 
-                    repaint();
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
+                        repaint();
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
                 }
             }
-        });
+        };
         mThread.start();
     }
 

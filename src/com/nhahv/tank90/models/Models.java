@@ -71,7 +71,6 @@ public class Models {
     public static final String PLAY_ONE_ONE = "/IMAGES/player_one.png";
     public static final String PLAY_ONE_TWO = "/IMAGES/player_two.png";
 
-    public static final int PADDING_TANK = 6;
 
     // type of boss
     public static final int TYPE_BOSS_1 = 0;
@@ -80,6 +79,8 @@ public class Models {
     public static final int TYPE_BOSS_4 = 3;
     public static final int TYPE_BOSS_5 = 4;
     public static final int TYPE_BOSS_6 = 5;
+    public static final int TYPE_BOSS_7 = 6;
+
 
     public static final int SIZE_BOOS = 56;
     public static final int NUMBER_BOOS = 4;
@@ -95,11 +96,6 @@ public class Models {
     public static final int TYPE_ITEMS_5 = 4;
     public static final int TYPE_ITEMS_6 = 5;
 
-    public static final int MAPS_CROSS = 0;
-    public static final int MAPS_NO_CROSS = 1;
-    public static final int MAPS_BREAK = 2;
-//    public static final int MAPS_CROSS = 0;
-
 
     public static final int TYPE_HELP_1 = 0;
     public static final int TYPE_HELP_2 = 1;
@@ -110,7 +106,6 @@ public class Models {
     public static final int TYPE_HELP_7 = 6;
 
 
-    //    public static final int SIZE_BULLET = 16;
     public static final int SIZE_BULLET = 14;
     public static final int NUMBER_BULLET = 4;
     public static final int TYPE_BULLET_NORMAL = 0;
@@ -148,6 +143,14 @@ public class Models {
     public static final int PLAYER_22 = 3;
     public static final String BOMB_BIRD = "/IMAGES/bomb_bird.png";
     public static final String BOMB = "/IMAGES/bomb_bomb.png";
+    public static final String SOUND_RUN_GAME = "/SOUNDS/enter_game.wav";
+    public static final String SOUND_EXPLOSION = "/SOUNDS/explosion_tank.wav";
+    public static final String SOUND_LEVEL_UP = "/SOUNDS/level_completed.wav";
+    public static final String SOUND_LIFE = "/SOUNDS/life.wav";
+    public static final String SOUND_MOVE = "/SOUNDS/move.wav";
+    public static final String SOUND_SHOOT = "/SOUNDS/shoot.wav";
+    public static final String SOUND_SHOOT_STONE = "/SOUNDS/shootStone.wav";
+    public static final String SOUND_SHOOT_TANK = "/SOUNDS/shootTank.wav";
     public static int NUMBER_BOOS_SHOW = 4;
     public static int NUMBER_TANK_BOSS = 6;
 }
